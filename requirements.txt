@@ -1,0 +1,13 @@
+# Basic data-analysis stack
+pandas
+numpy
+ipython
+jupyterlab
+requests
+openpyxl
+xlsxwriter
+matplotlib
+polars
+pyarrow
+joblib
+plotly
