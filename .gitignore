@@ -24,3 +24,7 @@ Thumbs.db
 build/
 dist/
 *.egg-info/
+
+# Local source/reference template; the deployable site lives at repo root.
+academic-site-template/
+academic-site-template*.zip
