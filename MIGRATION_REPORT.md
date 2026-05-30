@@ -22,7 +22,7 @@
 
 ## Content preserved
 
-- Home page identity text: Michael Dalton, Research Economist, Bureau of Labor Statistics, obfuscated email display, and Twitter handle.
+- Home page identity text: Michael Dalton, Research Economist, Bureau of Labor Statistics, obfuscated email display, and LinkedIn profile link.
 - Home page recent updates were preserved and made more scannable with links to full research entries.
 - Research page section headers were preserved:
   - Working Papers
@@ -35,7 +35,7 @@
 
 ## Preserved external links
 
-- `https://www.twitter.com/WhereTheJobsAt`
+- `https://www.linkedin.com/in/mdaltonecon/`
 - `https://www.bls.gov/osmr/research-papers/2022/pdf/ec220080.pdf`
 - `https://youtu.be/KF2GBaFShL4?t=13023`
 - `https://www.bls.gov/osmr/research-papers/2021/pdf/ec210080.pdf`
