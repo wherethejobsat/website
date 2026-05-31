@@ -1,0 +1,628 @@
+{
+  "nodes": [
+    {
+      "id": "workforce-development",
+      "type": "paper",
+      "label": "Skills Gap",
+      "title": "Do Workforce Development Programs Bridge the Skills Gap?",
+      "year": "2026",
+      "status": "NBER Working Paper",
+      "category": "Working Papers",
+      "href": "/research/#workforce-development",
+      "x": 440,
+      "y": 84
+    },
+    {
+      "id": "remote-work",
+      "type": "paper",
+      "label": "Remote Work",
+      "title": "The Impact of Remote Work on Local Employment, Business Relocation, and Local Home Costs",
+      "year": "2022",
+      "status": "Presentation: Stanford University Remote Work Conference",
+      "category": "Working Papers",
+      "href": "/research/#remote-work",
+      "x": 548,
+      "y": 128
+    },
+    {
+      "id": "employer-size-update",
+      "type": "paper",
+      "label": "Employer Size / COVID",
+      "title": "An Update on Employment changes by employer size during the COVID-19 pandemic: a look at the Current Employment Statistics survey microdata",
+      "year": "2020",
+      "status": "Slides presented at NBER 2021 Summer Workshop",
+      "category": "Working Papers",
+      "href": "/research/#employer-size-update",
+      "x": 430,
+      "y": 180
+    },
+    {
+      "id": "online-job-postings",
+      "type": "paper",
+      "label": "Job Postings",
+      "title": "Do Online Job Postings Capture Job Vacancies? An Analysis of Matched Online Postings and Vacancy Survey Data",
+      "year": "2026",
+      "status": "Work in Progress",
+      "category": "Works in Progress",
+      "href": "/research/#online-job-postings",
+      "x": 562,
+      "y": 238
+    },
+    {
+      "id": "heat-injuries",
+      "type": "paper",
+      "label": "Heat Injuries",
+      "title": "Heat and Injuries on the Job",
+      "year": "2021",
+      "status": "Work in Progress",
+      "category": "Works in Progress",
+      "href": "/research/#heat-injuries",
+      "x": 438,
+      "y": 292
+    },
+    {
+      "id": "job-search-evolution",
+      "type": "paper",
+      "label": "Job Search",
+      "title": "The Evolution of Job Search while Unemployed",
+      "year": "2020",
+      "status": "Work in Progress",
+      "category": "Works in Progress",
+      "href": "/research/#job-search-evolution",
+      "x": 552,
+      "y": 332
+    },
+    {
+      "id": "ppp",
+      "type": "paper",
+      "label": "PPP",
+      "title": "Putting the Paycheck Protection Program into Perspective: An Analysis Using Administrative and Survey Data",
+      "year": "2023",
+      "status": "National Tax Journal",
+      "category": "Publications",
+      "href": "/research/#ppp",
+      "x": 430,
+      "y": 382
+    },
+    {
+      "id": "k-shaped",
+      "type": "paper",
+      "label": "K-Shaped Recovery",
+      "title": "The K-Shaped Recovery: Examining the diverging fortunes of workers in the recovery from the COVID-19 pandemic using business and household survey microdata",
+      "year": "2021",
+      "status": "Journal of Economic Inequality",
+      "category": "Publications",
+      "href": "/research/#k-shaped",
+      "x": 554,
+      "y": 426
+    },
+    {
+      "id": "basketball",
+      "type": "paper",
+      "label": "NBA Hiring",
+      "title": "Overattention to First-Hand Experience in Hiring Decisions: Evidence from Professional Basketball",
+      "year": "2020",
+      "status": "Journal of Economic Behavior & Organization",
+      "category": "Publications",
+      "href": "/research/#basketball",
+      "x": 418,
+      "y": 474
+    },
+    {
+      "id": "ces-covid-econ",
+      "type": "paper",
+      "label": "CES COVID",
+      "title": "Employment changes by employer size using the Current Employment Statistics Survey microdata during the COVID-19 pandemic",
+      "year": "2020",
+      "status": "Covid Economics",
+      "category": "Publications",
+      "href": "/research/#ces-covid-econ",
+      "x": 546,
+      "y": 518
+    },
+    {
+      "id": "health-condition",
+      "type": "paper",
+      "label": "Health Shocks",
+      "title": "Mitigating the Consequences of a Health Condition: The Role of Intra- and Interhousehold Assistance",
+      "year": "2017",
+      "status": "Journal of Health Economics",
+      "category": "Publications",
+      "href": "/research/#health-condition",
+      "x": 430,
+      "y": 566
+    },
+    {
+      "id": "telework-brs",
+      "type": "paper",
+      "label": "Telework / BRS",
+      "title": "Telework during the COVID-19 pandemic: estimates using the 2021 Business Response Survey",
+      "year": "2022",
+      "status": "Monthly Labor Review",
+      "category": "BLS Publications",
+      "href": "/research/#telework-brs",
+      "x": 636,
+      "y": 178
+    },
+    {
+      "id": "employer-size-mlr",
+      "type": "paper",
+      "label": "Employer Size / MLR",
+      "title": "Employment changes by employer size during the COVID-19 pandemic: a look at the Current Employment Statistics survey microdata",
+      "year": "2020",
+      "status": "Monthly Labor Review",
+      "category": "BLS Publications",
+      "href": "/research/#employer-size-mlr",
+      "x": 646,
+      "y": 372
+    },
+    {
+      "id": "jobseekers",
+      "type": "paper",
+      "label": "Jobseekers",
+      "title": "How do jobseekers search for jobs? New data on applications, interviews, and job offers",
+      "year": "2020",
+      "status": "Beyond the Numbers",
+      "category": "BLS Publications",
+      "href": "/research/#jobseekers",
+      "x": 654,
+      "y": 488
+    },
+    {
+      "id": "geographic-impact",
+      "type": "paper",
+      "label": "Geographic Impact",
+      "title": "Geographic impact of COVID-19 in BLS surveys by industry",
+      "year": "2020",
+      "status": "Monthly Labor Review",
+      "category": "BLS Publications",
+      "href": "/research/#geographic-impact",
+      "x": 662,
+      "y": 602
+    },
+    {
+      "id": "informal-family-insurance",
+      "type": "paper",
+      "label": "Family Insurance",
+      "title": "Measuring the Mechanisms of Informal Family Insurance",
+      "year": "2018",
+      "status": "Inactive project",
+      "category": "Zombie Papers",
+      "href": "/research/#informal-family-insurance",
+      "x": 304,
+      "y": 610
+    },
+    {
+      "id": "family-decision-making",
+      "type": "paper",
+      "label": "Family Decisions",
+      "title": "Resources, Composition and Family Decision Making",
+      "year": "2017",
+      "status": "Inactive project",
+      "category": "Zombie Papers",
+      "href": "/research/#family-decision-making",
+      "x": 426,
+      "y": 658
+    },
+    {
+      "id": "family-transfers",
+      "type": "paper",
+      "label": "Family Transfers",
+      "title": "Family Transfers in Response to Unemployment",
+      "year": "2013",
+      "status": "Inactive project",
+      "category": "Zombie Papers",
+      "href": "/research/#family-transfers",
+      "x": 548,
+      "y": 662
+    },
+    {
+      "id": "topic-workforce-development",
+      "type": "topic",
+      "label": "Workforce development",
+      "x": 118,
+      "y": 58
+    },
+    {
+      "id": "topic-firm-training",
+      "type": "topic",
+      "label": "Firm training",
+      "x": 244,
+      "y": 104
+    },
+    {
+      "id": "topic-vacancies",
+      "type": "topic",
+      "label": "Vacancies",
+      "x": 124,
+      "y": 154
+    },
+    {
+      "id": "topic-remote-work",
+      "type": "topic",
+      "label": "Remote work",
+      "x": 244,
+      "y": 194
+    },
+    {
+      "id": "topic-establishments",
+      "type": "topic",
+      "label": "Establishments",
+      "x": 126,
+      "y": 244
+    },
+    {
+      "id": "topic-employer-size",
+      "type": "topic",
+      "label": "Employer size",
+      "x": 250,
+      "y": 290
+    },
+    {
+      "id": "topic-covid-19",
+      "type": "topic",
+      "label": "COVID-19",
+      "x": 120,
+      "y": 340
+    },
+    {
+      "id": "topic-heat",
+      "type": "topic",
+      "label": "Heat",
+      "x": 250,
+      "y": 386
+    },
+    {
+      "id": "topic-workplace-injuries",
+      "type": "topic",
+      "label": "Workplace injuries",
+      "x": 122,
+      "y": 430
+    },
+    {
+      "id": "topic-job-search",
+      "type": "topic",
+      "label": "Job search",
+      "x": 250,
+      "y": 472
+    },
+    {
+      "id": "topic-unemployment",
+      "type": "topic",
+      "label": "Unemployment",
+      "x": 126,
+      "y": 516
+    },
+    {
+      "id": "topic-ppp",
+      "type": "topic",
+      "label": "PPP",
+      "x": 250,
+      "y": 560
+    },
+    {
+      "id": "topic-wage-inequality",
+      "type": "topic",
+      "label": "Wage inequality",
+      "x": 116,
+      "y": 604
+    },
+    {
+      "id": "topic-family-support",
+      "type": "topic",
+      "label": "Family support",
+      "x": 200,
+      "y": 666
+    },
+    {
+      "id": "topic-hiring-decisions",
+      "type": "topic",
+      "label": "Hiring decisions",
+      "x": 312,
+      "y": 516
+    },
+    {
+      "id": "topic-health-shocks",
+      "type": "topic",
+      "label": "Health shocks",
+      "x": 312,
+      "y": 604
+    },
+    {
+      "id": "topic-telework",
+      "type": "topic",
+      "label": "Telework",
+      "x": 324,
+      "y": 152
+    },
+    {
+      "id": "topic-geography",
+      "type": "topic",
+      "label": "Geography",
+      "x": 318,
+      "y": 244
+    },
+    {
+      "id": "topic-employment",
+      "type": "topic",
+      "label": "Employment",
+      "x": 322,
+      "y": 338
+    },
+    {
+      "id": "topic-family-insurance",
+      "type": "topic",
+      "label": "Family insurance",
+      "x": 72,
+      "y": 660
+    },
+    {
+      "id": "topic-family-decision-making",
+      "type": "topic",
+      "label": "Family decision making",
+      "x": 292,
+      "y": 706
+    },
+    {
+      "id": "topic-transfers",
+      "type": "topic",
+      "label": "Transfers",
+      "x": 122,
+      "y": 706
+    },
+    {
+      "id": "data-qcew",
+      "type": "data",
+      "label": "QCEW",
+      "x": 780,
+      "y": 58
+    },
+    {
+      "id": "data-brs",
+      "type": "data",
+      "label": "Business Response Survey",
+      "x": 866,
+      "y": 116
+    },
+    {
+      "id": "data-oews",
+      "type": "data",
+      "label": "OEWS",
+      "x": 764,
+      "y": 164
+    },
+    {
+      "id": "data-acs",
+      "type": "data",
+      "label": "ACS",
+      "x": 880,
+      "y": 210
+    },
+    {
+      "id": "data-zillow",
+      "type": "data",
+      "label": "Zillow",
+      "x": 774,
+      "y": 260
+    },
+    {
+      "id": "data-ces",
+      "type": "data",
+      "label": "CES microdata",
+      "x": 880,
+      "y": 314
+    },
+    {
+      "id": "data-cps",
+      "type": "data",
+      "label": "CPS",
+      "x": 768,
+      "y": 374
+    },
+    {
+      "id": "data-online-job-postings",
+      "type": "data",
+      "label": "Online job postings",
+      "x": 884,
+      "y": 428
+    },
+    {
+      "id": "data-vacancy-survey",
+      "type": "data",
+      "label": "Vacancy survey data",
+      "x": 772,
+      "y": 478
+    },
+    {
+      "id": "data-admin-wage-records",
+      "type": "data",
+      "label": "Administrative wage records",
+      "x": 878,
+      "y": 532
+    },
+    {
+      "id": "data-survey-data",
+      "type": "data",
+      "label": "Survey data",
+      "x": 770,
+      "y": 584
+    },
+    {
+      "id": "data-longitudinal-family",
+      "type": "data",
+      "label": "Genealogically linked longitudinal data",
+      "x": 876,
+      "y": 640
+    },
+    {
+      "id": "method-linked-data",
+      "type": "method",
+      "label": "Linked data",
+      "x": 682,
+      "y": 74
+    },
+    {
+      "id": "method-firm-growth",
+      "type": "method",
+      "label": "Firm growth",
+      "x": 708,
+      "y": 220
+    },
+    {
+      "id": "method-establishment-dynamics",
+      "type": "method",
+      "label": "Establishment dynamics",
+      "x": 710,
+      "y": 300
+    },
+    {
+      "id": "method-local-employment",
+      "type": "method",
+      "label": "Local employment",
+      "x": 700,
+      "y": 402
+    },
+    {
+      "id": "method-business-relocation",
+      "type": "method",
+      "label": "Business relocation",
+      "x": 700,
+      "y": 470
+    },
+    {
+      "id": "method-telework-estimates",
+      "type": "method",
+      "label": "Telework estimates",
+      "x": 702,
+      "y": 154
+    },
+    {
+      "id": "method-wages",
+      "type": "method",
+      "label": "Wages",
+      "x": 700,
+      "y": 544
+    },
+    {
+      "id": "method-applications",
+      "type": "method",
+      "label": "Applications",
+      "x": 830,
+      "y": 704
+    },
+    {
+      "id": "method-interviews",
+      "type": "method",
+      "label": "Interviews",
+      "x": 706,
+      "y": 660
+    },
+    {
+      "id": "method-job-offers",
+      "type": "method",
+      "label": "Job offers",
+      "x": 930,
+      "y": 704
+    },
+    {
+      "id": "method-family-networks",
+      "type": "method",
+      "label": "Family networks",
+      "x": 704,
+      "y": 610
+    },
+    {
+      "id": "method-hiring-decisions",
+      "type": "method",
+      "label": "Hiring decisions",
+      "x": 708,
+      "y": 354
+    }
+  ],
+  "edges": [
+    ["workforce-development", "topic-workforce-development"],
+    ["workforce-development", "topic-firm-training"],
+    ["workforce-development", "topic-vacancies"],
+    ["workforce-development", "data-qcew"],
+    ["workforce-development", "method-linked-data"],
+    ["workforce-development", "method-firm-growth"],
+    ["remote-work", "topic-remote-work"],
+    ["remote-work", "topic-establishments"],
+    ["remote-work", "topic-geography"],
+    ["remote-work", "data-brs"],
+    ["remote-work", "data-oews"],
+    ["remote-work", "data-qcew"],
+    ["remote-work", "data-acs"],
+    ["remote-work", "data-zillow"],
+    ["remote-work", "method-telework-estimates"],
+    ["remote-work", "method-local-employment"],
+    ["remote-work", "method-business-relocation"],
+    ["employer-size-update", "topic-employer-size"],
+    ["employer-size-update", "topic-covid-19"],
+    ["employer-size-update", "topic-establishments"],
+    ["employer-size-update", "data-ces"],
+    ["employer-size-update", "method-establishment-dynamics"],
+    ["online-job-postings", "topic-vacancies"],
+    ["online-job-postings", "topic-job-search"],
+    ["online-job-postings", "data-online-job-postings"],
+    ["online-job-postings", "data-vacancy-survey"],
+    ["online-job-postings", "method-linked-data"],
+    ["heat-injuries", "topic-heat"],
+    ["heat-injuries", "topic-workplace-injuries"],
+    ["job-search-evolution", "topic-job-search"],
+    ["job-search-evolution", "topic-unemployment"],
+    ["ppp", "topic-ppp"],
+    ["ppp", "topic-employment"],
+    ["ppp", "data-admin-wage-records"],
+    ["ppp", "data-survey-data"],
+    ["ppp", "method-wages"],
+    ["ppp", "method-establishment-dynamics"],
+    ["k-shaped", "topic-covid-19"],
+    ["k-shaped", "topic-wage-inequality"],
+    ["k-shaped", "data-ces"],
+    ["k-shaped", "data-cps"],
+    ["k-shaped", "method-wages"],
+    ["basketball", "topic-hiring-decisions"],
+    ["basketball", "method-hiring-decisions"],
+    ["ces-covid-econ", "topic-employer-size"],
+    ["ces-covid-econ", "topic-covid-19"],
+    ["ces-covid-econ", "data-ces"],
+    ["ces-covid-econ", "method-establishment-dynamics"],
+    ["health-condition", "topic-health-shocks"],
+    ["health-condition", "topic-family-support"],
+    ["health-condition", "data-longitudinal-family"],
+    ["health-condition", "method-family-networks"],
+    ["telework-brs", "topic-telework"],
+    ["telework-brs", "topic-covid-19"],
+    ["telework-brs", "data-brs"],
+    ["telework-brs", "method-telework-estimates"],
+    ["telework-brs", "method-establishment-dynamics"],
+    ["telework-brs", "method-business-relocation"],
+    ["employer-size-mlr", "topic-employer-size"],
+    ["employer-size-mlr", "topic-covid-19"],
+    ["employer-size-mlr", "data-ces"],
+    ["employer-size-mlr", "method-establishment-dynamics"],
+    ["jobseekers", "topic-job-search"],
+    ["jobseekers", "topic-unemployment"],
+    ["jobseekers", "data-cps"],
+    ["jobseekers", "method-applications"],
+    ["jobseekers", "method-interviews"],
+    ["jobseekers", "method-job-offers"],
+    ["geographic-impact", "topic-geography"],
+    ["geographic-impact", "topic-covid-19"],
+    ["geographic-impact", "topic-employment"],
+    ["geographic-impact", "data-ces"],
+    ["geographic-impact", "data-cps"],
+    ["geographic-impact", "method-local-employment"],
+    ["informal-family-insurance", "topic-family-insurance"],
+    ["informal-family-insurance", "topic-family-support"],
+    ["informal-family-insurance", "method-family-networks"],
+    ["family-decision-making", "topic-family-decision-making"],
+    ["family-decision-making", "topic-family-support"],
+    ["family-decision-making", "method-family-networks"],
+    ["family-transfers", "topic-transfers"],
+    ["family-transfers", "topic-unemployment"],
+    ["family-transfers", "topic-family-support"],
+    ["family-transfers", "method-family-networks"]
+  ]
+}

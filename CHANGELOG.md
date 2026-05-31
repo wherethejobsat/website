@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-05-31 - Homepage Research Network
+
+- Replaced the static homepage research-theme motif with a dependency-free Research Network using local JSON, vanilla JavaScript, and SVG.
+- Connected research papers to supported topics, data sources, and method or measurement objects while preserving the exact `Zombie Papers` heading and category text.
+- Removed the repeated homepage profile/contact sidebar so the page now ends with the Research Network, compact links, and the global footer.
+- Expanded validation for network JSON structure, paper anchor resolution, generic image labels, and repeated profile material after the network.
+
 ## 2026-05-31 - Second aesthetic refinement
 
 - Removed repeated profile/logo panels from the research, CV, and contact pages.

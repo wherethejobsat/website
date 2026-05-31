@@ -7,6 +7,8 @@
 - Preserve deployment files when present: `CNAME`, `.nojekyll`, `robots.txt`, and `sitemap.xml`.
 - Keep the custom domain canonical as `https://michaeldaltoneconomics.org/`.
 - Keep CV links local and use `assets/docs/michael-dalton-cv.pdf` as the canonical PDF path.
+- Keep the homepage Research Network static and dependency-free: local JSON plus vanilla JavaScript/SVG only unless Michael explicitly approves another dependency.
+- Keep `assets/data/research-network.json` paper `href` values synchronized with stable IDs in `research/index.html`.
 - Use the obfuscated email display `Dalton.Michael at BLS dot gov` unless Michael explicitly asks for a mailto link.
 - Do not add credentials, API keys, DNS secrets, form-service tokens, or deployment secrets to the repo.
 

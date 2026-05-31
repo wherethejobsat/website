@@ -12,9 +12,10 @@
   <meta property="og:image" content="https://michaeldaltoneconomics.org/assets/img/data-mark-logo.svg">
   <meta name="twitter:card" content="summary_large_image">
   <title>Michael Dalton | Research Economist</title>
-  <link rel="stylesheet" href="/assets/css/style.css?v=20260531g">
+  <link rel="stylesheet" href="/assets/css/style.css?v=20260531h">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <script defer src="/assets/js/main.js?v=20260531g"></script>
+  <script defer src="/assets/js/research-network.js?v=20260531b"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -70,15 +71,15 @@
       <p class="lede">I study labor-market adjustment, business dynamics, job search, and how administrative and survey data can be used to measure economic change.</p>
       <div class="actions">
         <a class="btn primary" href="/research/">View Research</a>
+        <a class="btn" href="/cv/">CV Page</a>
         <a class="btn" href="/assets/docs/michael-dalton-cv.pdf">Download CV</a>
         <a class="btn text-link" href="/contact/">Contact</a>
       </div>
     </div>
   </section>
 
-  <section class="grid" aria-label="Main content">
-    <div class="home-flow">
-      <section class="content-block" aria-labelledby="featured-research-title">
+  <section class="home-flow" aria-label="Main content">
+    <section class="content-block" aria-labelledby="featured-research-title">
       <div class="section-title stacked">
         <h2 id="featured-research-title">Featured Research</h2>
         <small>Selected projects using administrative records, surveys, and linked public data.</small>
@@ -119,59 +120,59 @@
           <a class="card-link" href="/research/#ppp">Details</a>
         </article>
       </div>
-      </section>
+    </section>
 
-      <section class="content-block" aria-labelledby="themes-title">
+    <section class="research-network content-block" id="research-network" data-research-network data-network-src="/assets/data/research-network.json" aria-labelledby="research-network-title">
       <div class="section-title stacked">
-        <h2 id="themes-title">Research Themes</h2>
-        <small>Recurring measurement questions across the research portfolio.</small>
+        <h2 id="research-network-title">Research Network</h2>
+        <small>Papers connected by topics, datasets, and measurement questions.</small>
       </div>
 
-      <div class="theme-grid" aria-label="Research themes">
-        <span class="pill">Labor-market shocks</span>
-        <span class="pill">Firms and establishments</span>
-        <span class="pill">Job search</span>
-        <span class="pill">Remote work</span>
-        <span class="pill">Administrative data</span>
-        <span class="pill">Survey data</span>
+      <div class="network-filter" data-network-filters role="toolbar" aria-label="Filter research network by category">
+        <button class="network-filter-button is-active" type="button" data-filter="All" aria-pressed="true">All</button>
+        <button class="network-filter-button" type="button" data-filter="Working Papers" aria-pressed="false">Working Papers</button>
+        <button class="network-filter-button" type="button" data-filter="Works in Progress" aria-pressed="false">Works in Progress</button>
+        <button class="network-filter-button" type="button" data-filter="Publications" aria-pressed="false">Publications</button>
+        <button class="network-filter-button" type="button" data-filter="BLS Publications" aria-pressed="false">BLS Publications</button>
+        <button class="network-filter-button" type="button" data-filter="Zombie Papers" aria-pressed="false">Zombie Papers</button>
       </div>
-      </section>
 
-    </div>
-
-    <aside class="card pad" aria-label="Sidebar">
-      <div class="profile">
-        <div class="avatar">
-          <img src="/assets/img/data-mark-logo.svg" alt="" aria-hidden="true">
+      <div class="network-shell">
+        <div class="network-canvas" role="group" aria-label="Interactive research network. Use Tab to move between nodes; Enter or Space selects a node.">
+          <svg data-network-svg viewBox="0 0 1000 720" role="img" aria-labelledby="network-svg-title network-svg-desc" focusable="false">
+            <title id="network-svg-title">Research Network</title>
+            <desc id="network-svg-desc">Papers are connected to topics, data sources, and method or measurement objects.</desc>
+          </svg>
         </div>
-        <div>
-          <div class="name">Michael R. Dalton</div>
-          <div class="role">Research Economist, Bureau of Labor Statistics</div>
-          <div class="small">Washington, DC</div>
-        </div>
+
+        <aside class="network-panel" data-network-panel aria-live="polite" aria-label="Selected network item">
+          <p class="network-eyebrow">Selected node</p>
+          <h3>Network details</h3>
+          <p>Select a node after the local graph loads, or use the fallback research links below.</p>
+        </aside>
       </div>
 
-      <hr style="border: none; border-top: 1px solid var(--border); margin: 14px 0;">
+      <div class="network-fallback" data-network-fallback>
+        <h3>Research links by topic and data</h3>
+        <p>Readable fallback links remain available if JavaScript is unavailable.</p>
+        <ul>
+          <li><strong>QCEW:</strong> <a href="/research/#workforce-development">Skills Gap</a>; <a href="/research/#remote-work">Remote Work</a></li>
+          <li><strong>CES and CPS microdata:</strong> <a href="/research/#employer-size-update">Employer Size / COVID</a>; <a href="/research/#k-shaped">K-Shaped Recovery</a>; <a href="/research/#geographic-impact">Geographic COVID Impact</a></li>
+          <li><strong>Business Response Survey:</strong> <a href="/research/#remote-work">Remote Work</a>; <a href="/research/#telework-brs">Telework / BRS</a></li>
+          <li><strong>Job search:</strong> <a href="/research/#job-search-evolution">Job Search</a>; <a href="/research/#jobseekers">Jobseekers</a></li>
+          <li><strong>PPP and administrative records:</strong> <a href="/research/#ppp">PPP</a></li>
+          <li><strong>Family support and health:</strong> <a href="/research/#health-condition">Health Shocks</a>; <a href="/research/#informal-family-insurance">Family Insurance</a>; <a href="/research/#family-transfers">Family Transfers</a></li>
+        </ul>
+        <noscript><p>The interactive graph uses local JavaScript; the research links above provide the same core navigation.</p></noscript>
+      </div>
 
-      <dl class="kv">
-        <dt>Email</dt><dd>Dalton.Michael at BLS dot gov</dd>
-        <dt>Office</dt><dd>Office of Employment and Unemployment Statistics</dd>
-        <dt>Interests</dt><dd>Labor economics, data science, machine learning, applied microeconomics</dd>
-      </dl>
-
-      <div class="social" aria-label="Profiles and documents">
-        <a class="social-logo-link" href="https://www.linkedin.com/in/mdaltonecon/" rel="noopener">
-          <img class="social-icon" src="/assets/img/linkedin.svg" width="18" height="18" alt="" aria-hidden="true">
-          <span>LinkedIn</span>
-        </a>
-        <a class="social-logo-link" href="https://scholar.google.com/citations?hl=en&amp;user=C-mmySYAAAAJ" rel="noopener">
-          <img class="social-icon" src="/assets/img/google-scholar.svg" width="18" height="18" alt="" aria-hidden="true">
-          <span>Google Scholar</span>
-        </a>
-        <a href="/assets/docs/michael-dalton-cv.pdf">CV PDF</a>
+      <div class="home-cta" aria-label="Explore more">
+        <span>Explore more:</span>
         <a href="/research/">Research</a>
+        <a href="/cv/">CV</a>
+        <a href="/contact/">Contact</a>
       </div>
-    </aside>
+    </section>
   </section>
 </main>
 
