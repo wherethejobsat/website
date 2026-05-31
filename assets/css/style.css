@@ -698,10 +698,12 @@ details p {
 }
 
 .social-icon {
-  width: 18px;
-  height: 18px;
+  width: 18px !important;
+  height: 18px !important;
+  max-width: 18px;
   display: block;
   flex: 0 0 18px;
+  object-fit: contain;
 }
 
 .timeline {
