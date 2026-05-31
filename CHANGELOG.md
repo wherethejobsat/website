@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-05-31 - Research Map page
+
+- Moved the interactive graph from the homepage to the separate `/research-map/` page and linked it from the homepage.
+- Restored the homepage profile/contact side panel.
+- Reordered the homepage featured research cards newest-first by year.
+- Updated sitemap, validation, and documentation for the separate Research Map route.
+
 ## 2026-05-31 - Homepage Research Network
 
 - Replaced the static homepage research-theme motif with a dependency-free Research Network using local JSON, vanilla JavaScript, and SVG.

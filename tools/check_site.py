@@ -139,6 +139,7 @@ def check_required_files(errors):
     required = [
         "index.html",
         "research/index.html",
+        "research-map/index.html",
         "cv/index.html",
         "research.html",
         "cv.html",
@@ -161,7 +162,7 @@ def check_required_files(errors):
         if not (ROOT / rel).exists():
             errors.append(f"missing required file: {rel}")
 
-    required_routes = ["/", "/research/", "/cv/"]
+    required_routes = ["/", "/research/", "/research-map/", "/cv/"]
     for route in required_routes:
         if not route_exists(route):
             errors.append(f"required route is not represented: {route}")
@@ -255,6 +256,7 @@ def check_research_network(errors):
     network_path = ROOT / "assets" / "data" / "research-network.json"
     script_path = ROOT / "assets" / "js" / "research-network.js"
     index_path = ROOT / "index.html"
+    map_path = ROOT / "research-map" / "index.html"
     research_path = ROOT / "research" / "index.html"
 
     if not network_path.exists():
@@ -331,28 +333,21 @@ def check_research_network(errors):
 
     if index_path.exists():
         text = index_path.read_text(encoding="utf-8", errors="ignore")
+        if 'href="/research-map/"' not in text:
+            errors.append("index.html must link to the separate Research Map page")
+        if 'data-research-network' in text or 'data-network-svg' in text:
+            errors.append("index.html should link to the Research Map, not embed the interactive network")
+
+    if map_path.exists():
+        text = map_path.read_text(encoding="utf-8", errors="ignore")
+        if "Research Map" not in text:
+            errors.append("research-map/index.html is missing the Research Map page heading")
         if "Research Network" not in text:
-            errors.append("index.html is missing the Research Network section")
+            errors.append("research-map/index.html is missing the Research Network section")
         if "Papers connected by topics, datasets, and measurement questions." not in text:
-            errors.append("index.html is missing the required Research Network subtitle")
-        marker = 'id="research-network"'
-        marker_at = text.find(marker)
-        main_end = text.find("</main>", marker_at if marker_at != -1 else 0)
-        if marker_at == -1:
-            errors.append("index.html is missing id=\"research-network\"")
-        else:
-            after_network = text[marker_at:main_end if main_end != -1 else len(text)]
-            repeated_profile_markers = (
-                'class="profile"',
-                'class="avatar"',
-                "Michael R. Dalton",
-                "Research Economist, Bureau of Labor Statistics",
-                "Washington, DC",
-                "Office of Employment and Unemployment Statistics",
-            )
-            for marker_text in repeated_profile_markers:
-                if marker_text in after_network:
-                    errors.append(f"index.html repeats profile/contact material after the Research Network: {marker_text}")
+            errors.append("research-map/index.html is missing the required Research Network subtitle")
+        if 'id="research-network"' not in text or 'data-research-network' not in text:
+            errors.append("research-map/index.html is missing the interactive network mount")
 
 
 def check_no_cv_hotlink(errors):

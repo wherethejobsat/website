@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive research map connecting Michael Dalton's papers to topics, datasets, and measurement questions.">
+  <link rel="canonical" href="https://michaeldaltoneconomics.org/research-map/">
+  <meta property="og:title" content="Research Map | Michael Dalton">
+  <meta property="og:description" content="Papers connected by topics, datasets, and measurement questions.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://michaeldaltoneconomics.org/research-map/">
+  <meta property="og:image" content="https://michaeldaltoneconomics.org/assets/img/data-mark-logo.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Research Map | Michael Dalton</title>
+  <link rel="stylesheet" href="/assets/css/style.css?v=20260531h">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <script defer src="/assets/js/main.js?v=20260531g"></script>
+  <script defer src="/assets/js/research-network.js?v=20260531b"></script>
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <a class="brand-link" href="/" aria-label="Michael Dalton home">
+        <img class="brand-mark" src="/assets/img/data-mark-logo.svg" alt="" aria-hidden="true">
+        <span class="brand-text">Michael Dalton</span>
+      </a>
+      <span class="subtitle">Labor economics and public data</span>
+    </div>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="/research/">Research</a>
+      <a href="/cv/">CV</a>
+      <a class="cta" href="/contact/">Contact</a>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle color theme"><span class="theme-glyph" aria-hidden="true"></span></button>
+    </nav>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <section class="hero" aria-label="Page header">
+    <div class="hero-inner">
+      <p class="hero-kicker">Research portfolio map</p>
+      <h1>Research Map</h1>
+      <p class="lede">Papers connected by topics, datasets, and measurement questions.</p>
+      <div class="actions">
+        <a class="btn primary" href="/research/">Research page</a>
+        <a class="btn" href="/cv/">CV page</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="research-network content-block" id="research-network" data-research-network data-network-src="/assets/data/research-network.json" aria-labelledby="research-network-title">
+    <div class="section-title stacked">
+      <h2 id="research-network-title">Research Network</h2>
+      <small>Papers connected by topics, datasets, and measurement questions.</small>
+    </div>
+
+    <div class="network-filter" data-network-filters role="toolbar" aria-label="Filter research network by category">
+      <button class="network-filter-button is-active" type="button" data-filter="All" aria-pressed="true">All</button>
+      <button class="network-filter-button" type="button" data-filter="Working Papers" aria-pressed="false">Working Papers</button>
+      <button class="network-filter-button" type="button" data-filter="Works in Progress" aria-pressed="false">Works in Progress</button>
+      <button class="network-filter-button" type="button" data-filter="Publications" aria-pressed="false">Publications</button>
+      <button class="network-filter-button" type="button" data-filter="BLS Publications" aria-pressed="false">BLS Publications</button>
+      <button class="network-filter-button" type="button" data-filter="Zombie Papers" aria-pressed="false">Zombie Papers</button>
+    </div>
+
+    <div class="network-shell">
+      <div class="network-canvas" role="group" aria-label="Interactive research network. Use Tab to move between nodes; Enter or Space selects a node.">
+        <svg data-network-svg viewBox="0 0 1000 720" role="img" aria-labelledby="network-svg-title network-svg-desc" focusable="false">
+          <title id="network-svg-title">Research Network</title>
+          <desc id="network-svg-desc">Papers are connected to topics, data sources, and method or measurement objects.</desc>
+        </svg>
+      </div>
+
+      <aside class="network-panel" data-network-panel aria-live="polite" aria-label="Selected network item">
+        <p class="network-eyebrow">Selected node</p>
+        <h3>Network details</h3>
+        <p>Select a node after the local graph loads, or use the fallback research links below.</p>
+      </aside>
+    </div>
+
+    <div class="network-fallback" data-network-fallback>
+      <h3>Research links by topic and data</h3>
+      <p>Readable fallback links remain available if JavaScript is unavailable.</p>
+      <ul>
+        <li><strong>QCEW:</strong> <a href="/research/#workforce-development">Skills Gap</a>; <a href="/research/#remote-work">Remote Work</a></li>
+        <li><strong>CES and CPS microdata:</strong> <a href="/research/#employer-size-update">Employer Size / COVID</a>; <a href="/research/#k-shaped">K-Shaped Recovery</a>; <a href="/research/#geographic-impact">Geographic COVID Impact</a></li>
+        <li><strong>Business Response Survey:</strong> <a href="/research/#remote-work">Remote Work</a>; <a href="/research/#telework-brs">Telework / BRS</a></li>
+        <li><strong>Job search:</strong> <a href="/research/#job-search-evolution">Job Search</a>; <a href="/research/#jobseekers">Jobseekers</a></li>
+        <li><strong>PPP and administrative records:</strong> <a href="/research/#ppp">PPP</a></li>
+        <li><strong>Family support and health:</strong> <a href="/research/#health-condition">Health Shocks</a>; <a href="/research/#informal-family-insurance">Family Insurance</a>; <a href="/research/#family-transfers">Family Transfers</a></li>
+      </ul>
+      <noscript><p>The interactive graph uses local JavaScript; the research links above provide the same core navigation.</p></noscript>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="small">
+      <strong>Michael Dalton</strong> | Research Economist, Bureau of Labor Statistics.<br>
+      Views expressed here are my own and do not necessarily reflect the views of the Bureau of Labor Statistics.
+    </div>
+    <div class="footer-links small">
+      <a href="/research/">Research</a>
+      <a href="/cv/">CV</a>
+      <a href="/contact/">Contact</a>
+    </div>
+    <div class="small">Copyright <span id="year">2026</span> Michael Dalton.</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

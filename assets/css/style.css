@@ -458,6 +458,10 @@ html[data-theme="dark"] .site-header {
   margin-top: 22px;
 }
 
+.hero + .research-network {
+  margin-top: 22px;
+}
+
 .cv-page {
   grid-template-columns: minmax(0, 1fr);
 }

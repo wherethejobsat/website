@@ -14,6 +14,7 @@ Then open:
 
 - `http://localhost:8000/`
 - `http://localhost:8000/research/`
+- `http://localhost:8000/research-map/`
 - `http://localhost:8000/cv/`
 
 ## Validate
@@ -28,6 +29,7 @@ The checker verifies required pages and routes, starter strings, local internal 
 
 - `index.html`: home page
 - `research/index.html`: canonical `/research/` page
+- `research-map/index.html`: canonical `/research-map/` page with the interactive Research Map
 - `cv/index.html`: canonical `/cv/` page
 - `contact/index.html`: static contact page with no form dependency
 - `research.html`, `cv.html`, `contact.html`: redirect/canonical helper stubs
@@ -50,8 +52,8 @@ The checker verifies required pages and routes, starter strings, local internal 
 - Keep the research heading `Zombie Papers` exactly as written.
 - Keep Palette A and the data-mark logo in `assets/css/style.css`, `assets/img/data-mark-logo.svg`, and `favicon.svg`.
 - Edit research cards directly in `research/index.html`; preserve titles, coauthors, abstracts, publication status, and outbound links.
-- Edit homepage graph data in `assets/data/research-network.json`; keep paper `href` values synchronized with IDs in `research/index.html`.
-- Edit homepage graph behavior in `assets/js/research-network.js`; keep it dependency-free vanilla JavaScript and SVG.
+- Edit Research Map data in `assets/data/research-network.json`; keep paper `href` values synchronized with IDs in `research/index.html`.
+- Edit Research Map behavior in `assets/js/research-network.js`; keep it dependency-free vanilla JavaScript and SVG.
 - Keep CV links local. Do not hotlink the legacy GoDaddy PDF.
 - When adding a page, update `sitemap.xml`, canonical URLs, navigation if needed, and `tools/check_site.py` if the page becomes required.
 - Use the obfuscated email display `Dalton.Michael at BLS dot gov` in HTML unless Michael explicitly wants a mailto link.
@@ -60,7 +62,7 @@ The checker verifies required pages and routes, starter strings, local internal 
 
 1. Run `python3 tools/check_site.py`.
 2. Preview with `python3 -m http.server 8000`.
-3. Confirm `/`, `/research/`, and `/cv/` load locally.
+3. Confirm `/`, `/research/`, `/research-map/`, and `/cv/` load locally.
 4. Confirm `assets/docs/michael-dalton-cv.pdf` downloads locally.
 5. Deploy through GitHub Pages or Cloudflare Pages using `DEPLOYMENT.md`.
 6. Do not cancel or delete the old GoDaddy site until the custom domain resolves to the new host and HTTPS works.
