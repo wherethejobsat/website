@@ -685,6 +685,17 @@ details p {
   margin-top: 12px;
 }
 
+.social a.social-logo-link {
+  gap: 7px;
+}
+
+.social-icon {
+  width: 18px;
+  height: 18px;
+  display: block;
+  flex: 0 0 18px;
+}
+
 .timeline {
   display: grid;
   gap: 10px;
