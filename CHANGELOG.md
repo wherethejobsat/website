@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-05-31 - Second aesthetic refinement
+
+- Removed repeated profile/logo panels from the research, CV, and contact pages.
+- Tightened homepage feature cards, research hierarchy, CV-at-a-glance presentation, and the static contact page.
+- Added the `Zombie Papers` research jump link while preserving the section heading exactly.
+- Removed implementation-sounding public copy and kept the BLS disclaimer to the footer on each page.
+- Updated validation checks for public-copy residue, research jump links, and duplicate contact disclaimers.
+
 ## 2026-05-31 - Visual refinement
 
 - Added a compact data-mark logo and favicon using the Palette A blue and copper colors.

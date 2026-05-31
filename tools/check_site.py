@@ -20,8 +20,11 @@ UNWANTED_STRINGS = (
     "USERNAME" + ".github.io",
     "mirrored from " + "the current site",
     "from the " + "live site",
+    "Abstracts are in " + "the page HTML",
+    "This static site does " + "not use a contact form",
     "place" + "holder",
 )
+DISCLAIMER = "Views expressed here are my own and do not necessarily reflect the views of the Bureau of Labor Statistics."
 BANNED_ZOMBIE_RENAMES = (
     "Earlier " + "Work",
     "Archived " + "Papers",
@@ -218,9 +221,20 @@ def check_research_section_names(errors):
     text = research.read_text(encoding="utf-8", errors="ignore")
     if "Zombie Papers" not in text:
         errors.append("research/index.html is missing the required heading: Zombie Papers")
+    if 'href="#working-papers"' in text and 'href="#zombie-papers"' not in text:
+        errors.append("research section jump links omit Zombie Papers")
     for heading in BANNED_ZOMBIE_RENAMES:
         if heading in text:
             errors.append(f"research/index.html contains a banned replacement heading: {heading}")
+
+
+def check_contact_disclaimer(errors):
+    contact = ROOT / "contact" / "index.html"
+    if not contact.exists():
+        return
+    text = contact.read_text(encoding="utf-8", errors="ignore")
+    if text.count(DISCLAIMER) > 1:
+        errors.append("contact/index.html repeats the BLS disclaimer more than once")
 
 
 def main():
@@ -231,6 +245,7 @@ def main():
     check_html(errors)
     check_no_cv_hotlink(errors)
     check_research_section_names(errors)
+    check_contact_disclaimer(errors)
 
     if errors:
         print("Site validation failed:")

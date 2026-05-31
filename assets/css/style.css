@@ -308,8 +308,10 @@ html[data-theme="dark"] .site-header {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(90deg, transparent 0 18%, rgba(31, 78, 121, 0.07) 18% 19%, transparent 19% 38%, rgba(180, 83, 9, 0.06) 38% 39%, transparent 39% 100%),
-    linear-gradient(180deg, rgba(31, 78, 121, 0.04), transparent 42%);
+    linear-gradient(to right, rgba(31, 78, 121, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(31, 78, 121, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.75;
 }
 
 .hero-inner {
@@ -444,12 +446,25 @@ html[data-theme="dark"] .site-header {
 }
 
 .grid,
-.page-grid {
+.page-grid,
+.cv-page {
   display: grid;
   grid-template-columns: minmax(0, 1.7fr) minmax(270px, 0.8fr);
   gap: 22px;
   align-items: start;
   margin-top: 22px;
+}
+
+.research-page {
+  margin-top: 22px;
+}
+
+.cv-page {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.contact-container {
+  max-width: 780px;
 }
 
 .home-flow,
@@ -522,6 +537,30 @@ html[data-theme="dark"] .site-header {
 
 .feature-card h3 { font-size: 1.08rem; }
 
+.feature-meta {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.card-link {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 10px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--primary);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.card-link:hover {
+  text-decoration: none;
+  border-color: rgba(31, 78, 121, 0.35);
+}
+
 .feature-card p,
 .entry p,
 .card p,
@@ -552,6 +591,15 @@ html[data-theme="dark"] .site-header {
 
 .research-section + .research-section {
   margin-top: 24px;
+}
+
+.zombie-section .entry {
+  border-color: rgba(92, 101, 117, 0.28);
+  background: color-mix(in oklab, var(--surface), var(--surface-2) 30%);
+}
+
+.zombie-section .entry h3 {
+  font-size: 1rem;
 }
 
 .entry {
@@ -680,6 +728,21 @@ details p {
   font-weight: 700;
 }
 
+.cv-at-glance .summary-facts {
+  margin-bottom: 0;
+}
+
+.cv-facts {
+  grid-template-columns: 160px 1fr;
+}
+
+.contact-card h1 {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  line-height: 1.08;
+}
+
 .profile {
   display: grid;
   grid-template-columns: 52px 1fr;
@@ -804,7 +867,8 @@ hr {
 
 @media (max-width: 920px) {
   .grid,
-  .page-grid {
+  .page-grid,
+  .cv-page {
     grid-template-columns: 1fr;
   }
 
@@ -863,7 +927,8 @@ hr {
   }
 
   .grid,
-  .page-grid {
+  .page-grid,
+  .cv-page {
     gap: 14px;
     margin-top: 14px;
   }
