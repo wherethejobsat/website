@@ -633,6 +633,14 @@ details p {
   margin-top: 10px;
 }
 
+.jump-list a {
+  background: var(--surface-2);
+  border-color: rgba(31, 78, 121, 0.26);
+  color: var(--primary);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+
 .kv {
   display: grid;
   grid-template-columns: 115px 1fr;

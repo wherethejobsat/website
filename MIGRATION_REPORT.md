@@ -57,10 +57,12 @@
 - `https://sites.google.com/view/andreasimueller/`
 - `https://link.springer.com/article/10.1007/s10888-021-09506-6`
 - `https://link.springer.com/content/pdf/10.1007/s10888-021-09506-6.pdf`
-- `https://img1.wsimg.com/blobby/go/de39cd4b-4868-47c8-bdb3-a2c6f7313984/downloads/nba_FINAL.pdf?ver=1591229303181`
+- `https://www.sciencedirect.com/science/article/abs/pii/S0167268120301281`
+- `https://doi.org/10.1016/j.jebo.2020.04.015`
+- `https://utoronto.scholaris.ca/server/api/core/bitstreams/f9597adb-32a4-466b-a388-21ea2466179f/content`
 - `https://sites.google.com/site/peterlandryecon/home`
 - `http://web.colby.edu/drlafave/files/2017/03/daltonlafave2017jhe.pdf`
-- `http://web.colby.edu/drlafave/`
+- `https://web.colby.edu/drlafave/`
 - `https://doi.org/10.21916/mlr.2022.8`
 - `https://doi.org/10.21916/mlr.2020.23`
 - `https://www.bls.gov/opub/btn/volume-9/how-do-jobseekers-search-for-jobs.htm`
