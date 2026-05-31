@@ -9,11 +9,11 @@
   <meta property="og:description" content="Research, publications, and CV for Michael Dalton, Research Economist at the Bureau of Labor Statistics.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://michaeldaltoneconomics.org/">
-  <meta property="og:image" content="https://michaeldaltoneconomics.org/assets/img/postal-square-building.jpg">
+  <meta property="og:image" content="https://michaeldaltoneconomics.org/assets/img/data-mark-logo.svg">
   <meta name="twitter:card" content="summary_large_image">
   <title>Michael Dalton | Research Economist</title>
   <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="icon" href="/assets/img/profile.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <script defer src="/assets/js/main.js"></script>
   <script type="application/ld+json">
   {
@@ -27,7 +27,8 @@
     },
     "url": "https://michaeldaltoneconomics.org/",
     "sameAs": [
-      "https://www.linkedin.com/in/mdaltonecon/"
+      "https://www.linkedin.com/in/mdaltonecon/",
+      "https://scholar.google.com/citations?hl=en&user=C-mmySYAAAAJ"
     ],
     "knowsAbout": [
       "Labor Economics",
@@ -44,15 +45,18 @@
 <header class="site-header">
   <div class="header-inner">
     <div class="brand">
-      <a href="/">Michael Dalton</a>
-      <span class="subtitle">Economics | Bureau of Labor Statistics</span>
+      <a class="brand-link" href="/" aria-label="Michael Dalton home">
+        <img class="brand-mark" src="/assets/img/data-mark-logo.svg" alt="" aria-hidden="true">
+        <span class="brand-text">Michael Dalton</span>
+      </a>
+      <span class="subtitle">Labor economics and public data</span>
     </div>
 
     <nav class="nav" aria-label="Primary">
       <a href="/research/">Research</a>
       <a href="/cv/">CV</a>
       <a class="cta" href="/contact/">Contact</a>
-      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme">Theme</button>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle color theme"><span class="theme-glyph" aria-hidden="true"></span></button>
     </nav>
   </div>
 </header>
@@ -60,93 +64,83 @@
 <main class="container" id="content">
   <section class="hero" aria-label="Page header">
     <div class="hero-inner">
+      <p class="hero-kicker">Empirical labor economics</p>
       <h1>Michael Dalton</h1>
-      <p class="lede">Research Economist in the Office of Employment and Unemployment Statistics at the Bureau of Labor Statistics.</p>
-      <div class="meta">
-        <div>Affiliation: Bureau of Labor Statistics</div>
-        <div>Location: Washington, DC</div>
-        <div>Email: Dalton.Michael at BLS dot gov</div>
-      </div>
-      <div class="pills">
-        <span class="pill">Labor economics</span>
-        <span class="pill">Data science</span>
-        <span class="pill">Machine learning</span>
-        <span class="pill">Applied microeconomics</span>
-      </div>
+      <p class="lede">Research Economist, Bureau of Labor Statistics</p>
+      <p class="lede">I study labor-market adjustment, business dynamics, job search, and how administrative and survey data can be used to measure economic change.</p>
       <div class="actions">
-        <a class="btn primary" href="/research/">Research</a>
-        <a class="btn" href="/cv/">CV</a>
+        <a class="btn primary" href="/research/">View Research</a>
         <a class="btn" href="/assets/docs/michael-dalton-cv.pdf">Download CV</a>
+        <a class="btn text-link" href="/contact/">Contact</a>
       </div>
     </div>
   </section>
 
   <section class="grid" aria-label="Main content">
-    <div class="card pad">
+    <div class="home-flow">
+      <section class="content-block" aria-labelledby="featured-research-title">
       <div class="section-title stacked">
-        <h2>Recent updates</h2>
-        <small>Selected updates mirrored from the current site, with full entries on the research page.</small>
+        <h2 id="featured-research-title">Featured Research</h2>
+        <small>Selected projects using administrative records, surveys, and linked public data.</small>
       </div>
 
-      <ul class="list">
-        <li>
-          <div><span class="badge">Working paper</span></div>
-          <strong><a href="/research/#remote-work">The Impact of Remote Work on Local Employment, Business Relocation, and Local Home Costs</a></strong>
-          <p>With Matt Dey and Mark Loewenstein. The project combines BLS, ACS, QCEW, and Zillow data to study telework, establishment decisions, local foot traffic, employment, rents, and home prices.</p>
-        </li>
-        <li>
-          <div><span class="badge">Working paper</span></div>
-          <strong><a href="/research/#ppp">Putting the Paycheck Protection Program into Perspective</a></strong>
-          <p>An analysis using administrative and survey data to estimate the effects of PPP loans on employment, wages, and establishment opening status.</p>
-        </li>
-        <li>
-          <div><span class="badge">Publication</span></div>
-          <strong><a href="/research/#k-shaped">The K-Shaped Recovery</a></strong>
-          <p>Published in the Journal of Economic Inequality with Jeffrey Groen, Mark A. Loewenstein, David Piccone, and Anne Polivka.</p>
-        </li>
-        <li>
-          <div><span class="badge">BLS research</span></div>
-          <strong><a href="/research/#employer-size-update">An Update on Employment changes by employer size during the COVID-19 pandemic</a></strong>
-          <p>With Elizabeth Weber Handwerker and Mark A. Loewenstein, using Current Employment Statistics survey microdata.</p>
-        </li>
-        <li>
-          <div><span class="badge">BLS publication</span></div>
-          <strong><a href="/research/#jobseekers">How do jobseekers search for jobs?</a></strong>
-          <p>Beyond the Numbers article with Jeffrey A. Groen on applications, interviews, and job offers.</p>
-        </li>
-      </ul>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <span class="badge">Working paper</span>
+          <h3><a href="/research/#workforce-development">Do Workforce Development Programs Bridge the Skills Gap?</a></h3>
+          <p>State training grants, firm growth, job postings, and worker-skill requirements.</p>
+        </article>
+        <article class="feature-card">
+          <span class="badge">Working paper</span>
+          <h3><a href="/research/#remote-work">The Impact of Remote Work on Local Employment, Business Relocation, and Local Home Costs</a></h3>
+          <p>Telework, establishment decisions, local foot traffic, employment, rents, and home prices.</p>
+        </article>
+        <article class="feature-card">
+          <span class="badge">Publication</span>
+          <h3><a href="/research/#ppp">Putting the Paycheck Protection Program into Perspective</a></h3>
+          <p>Published in National Tax Journal using administrative and survey evidence on PPP loans.</p>
+        </article>
+      </div>
+      </section>
 
-      <hr style="border: none; border-top: 1px solid var(--border); margin: 16px 0;">
-
+      <section class="content-block" aria-labelledby="themes-title">
       <div class="section-title stacked">
-        <h2>Research themes</h2>
-        <small>Areas represented across the migrated papers and CV.</small>
+        <h2 id="themes-title">Research Themes</h2>
+        <small>Recurring measurement questions across the research portfolio.</small>
       </div>
 
-      <ul class="list">
-        <li>
-          <strong>Labor-market measurement and shocks</strong>
-          <p>Employment, wages, establishments, vacancies, telework, job search, and the COVID-19 labor-market recovery.</p>
-        </li>
-        <li>
-          <strong>Administrative and survey data</strong>
-          <p>Work combining BLS surveys, administrative records, and external data sources to answer policy-relevant empirical questions.</p>
-        </li>
-        <li>
-          <strong>Households, health, and family support</strong>
-          <p>Research on informal insurance, health shocks, and family transfers from earlier work and archived papers.</p>
-        </li>
-      </ul>
+      <div class="theme-grid" aria-label="Research themes">
+        <span class="pill">Labor-market shocks</span>
+        <span class="pill">Firms and establishments</span>
+        <span class="pill">Job search</span>
+        <span class="pill">Remote work</span>
+        <span class="pill">Administrative data</span>
+        <span class="pill">Survey data</span>
+      </div>
+      </section>
+
+      <section class="content-block" aria-labelledby="research-map-title">
+        <div class="section-title stacked">
+          <h2 id="research-map-title">Research Map</h2>
+          <small>A compact view of the units that recur across the work.</small>
+        </div>
+        <div class="research-map" aria-label="Workers to firms to vacancies to places">
+          <div class="map-node"><strong>Workers</strong><span>employment, wages, search</span></div>
+          <div class="map-node"><strong>Firms</strong><span>establishments, openings, size</span></div>
+          <div class="map-node"><strong>Vacancies</strong><span>postings, offers, matching</span></div>
+          <div class="map-node"><strong>Places</strong><span>commuting, prices, local activity</span></div>
+        </div>
+      </section>
     </div>
 
     <aside class="card pad" aria-label="Sidebar">
       <div class="profile">
         <div class="avatar">
-          <img src="/assets/img/profile.svg" alt="Michael Dalton monogram">
+          <img src="/assets/img/data-mark-logo.svg" alt="" aria-hidden="true">
         </div>
         <div>
           <div class="name">Michael R. Dalton</div>
-          <div class="role">Research Economist | Bureau of Labor Statistics</div>
+          <div class="role">Research Economist, Bureau of Labor Statistics</div>
           <div class="small">Washington, DC</div>
         </div>
       </div>
@@ -164,6 +158,7 @@
           <img class="social-icon" src="/assets/img/linkedin.svg" alt="">
           <span class="visually-hidden">LinkedIn profile</span>
         </a>
+        <a href="https://scholar.google.com/citations?hl=en&amp;user=C-mmySYAAAAJ" rel="noopener">Google Scholar</a>
         <a href="/assets/docs/michael-dalton-cv.pdf">CV PDF</a>
         <a href="/research/">Research</a>
       </div>

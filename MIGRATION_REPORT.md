@@ -15,15 +15,15 @@
 
 - Canonical CV PDF: `assets/docs/michael-dalton-cv.pdf`
 - Compatibility CV PDF copy: `assets/docs/cv.pdf`
-- Hero/Open Graph image: `assets/img/postal-square-building.jpg`
-- Profile/favicon monogram: `assets/img/profile.svg`
+- Data-mark logo: `assets/img/data-mark-logo.svg`
+- Favicon: `favicon.svg`
 - CSS: `assets/css/style.css`
 - JavaScript: `assets/js/main.js`
 
 ## Content preserved
 
-- Home page identity text: Michael Dalton, Research Economist, Bureau of Labor Statistics, obfuscated email display, and LinkedIn profile link.
-- Home page recent updates were preserved and made more scannable with links to full research entries.
+- Home page identity text: Michael Dalton, Research Economist, Bureau of Labor Statistics, obfuscated email display, LinkedIn profile link, and Google Scholar profile link.
+- Home page research links were preserved and presented as featured research cards with links to full research entries.
 - Research page section headers were preserved:
   - Working Papers
   - Works in Progress
@@ -36,6 +36,12 @@
 ## Preserved external links
 
 - `https://www.linkedin.com/in/mdaltonecon/`
+- `https://scholar.google.com/citations?hl=en&user=C-mmySYAAAAJ`
+- `https://scholar.google.com/citations?view_op=view_citation&hl=en&user=C-mmySYAAAAJ&citation_for_view=C-mmySYAAAAJ:u-x6o8ySG0sC`
+- `https://www.nber.org/papers/w34012`
+- `https://doi.org/10.3386/w34012`
+- `https://www.journals.uchicago.edu/doi/abs/10.1086/724591`
+- `https://doi.org/10.1086/724591`
 - `https://www.bls.gov/osmr/research-papers/2022/pdf/ec220080.pdf`
 - `https://youtu.be/KF2GBaFShL4?t=13023`
 - `https://www.bls.gov/osmr/research-papers/2021/pdf/ec210080.pdf`
@@ -89,4 +95,4 @@ Run:
 python3 tools/check_site.py
 ```
 
-The checker covers route presence, required files, placeholder strings, local internal links, HTML title/meta/canonical coverage, sitemap domain, CNAME contents, and legacy CV hotlinks.
+The checker covers route presence, required files, starter strings, local internal links, HTML title/meta/canonical coverage, sitemap domain, CNAME contents, required research headings, and legacy CV hotlinks.

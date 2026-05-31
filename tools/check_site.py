@@ -14,13 +14,17 @@ import sys
 
 ROOT = Path.cwd()
 DOMAIN = "https://michaeldaltoneconomics.org"
-PLACEHOLDERS = (
+UNWANTED_STRINGS = (
     "Your " + "Name",
-    "you@" + "university",
+    "you@" + "university.edu",
     "USERNAME" + ".github.io",
-    "YYYY" + "-MM-DD",
-    "your" + "FormId",
-    "Form" + "spree",
+    "mirrored from " + "the current site",
+    "from the " + "live site",
+    "place" + "holder",
+)
+BANNED_ZOMBIE_RENAMES = (
+    "Earlier " + "Work",
+    "Archived " + "Papers",
 )
 SKIP_DIRS = {
     ".git",
@@ -121,8 +125,9 @@ def check_required_files(errors):
         ".nojekyll",
         "assets/css/style.css",
         "assets/js/main.js",
-        "assets/img/profile.svg",
-        "assets/img/postal-square-building.jpg",
+        "assets/img/data-mark-logo.svg",
+        "assets/img/favicon.svg",
+        "favicon.svg",
         "assets/docs/michael-dalton-cv.pdf",
         "assets/docs/cv.pdf",
     ]
@@ -151,15 +156,15 @@ def check_cname_and_sitemap(errors):
                 errors.append(f"sitemap.xml contains wrong domain marker: {bad}")
 
 
-def check_placeholders(errors):
+def check_unwanted_strings(errors):
     for path in iter_site_files():
         if path.suffix.lower() in {".pdf", ".jpg", ".png", ".ico"}:
             continue
         text = path.read_text(encoding="utf-8", errors="ignore")
-        for marker in PLACEHOLDERS:
+        for marker in UNWANTED_STRINGS:
             if marker in text:
                 rel = path.relative_to(ROOT)
-                errors.append(f"placeholder remains in {rel}: {marker}")
+                errors.append(f"unwanted string remains in {rel}: {marker}")
 
 
 def check_html(errors):
@@ -206,13 +211,26 @@ def check_no_cv_hotlink(errors):
             errors.append(f"legacy CV PDF hotlink remains in {path.relative_to(ROOT)}")
 
 
+def check_research_section_names(errors):
+    research = ROOT / "research" / "index.html"
+    if not research.exists():
+        return
+    text = research.read_text(encoding="utf-8", errors="ignore")
+    if "Zombie Papers" not in text:
+        errors.append("research/index.html is missing the required heading: Zombie Papers")
+    for heading in BANNED_ZOMBIE_RENAMES:
+        if heading in text:
+            errors.append(f"research/index.html contains a banned replacement heading: {heading}")
+
+
 def main():
     errors = []
     check_required_files(errors)
     check_cname_and_sitemap(errors)
-    check_placeholders(errors)
+    check_unwanted_strings(errors)
     check_html(errors)
     check_no_cv_hotlink(errors)
+    check_research_section_names(errors)
 
     if errors:
         print("Site validation failed:")

@@ -1,6 +1,6 @@
 # Michael Dalton academic website
 
-Static academic website for `michaeldaltoneconomics.org`, migrated from the paid GoDaddy website builder to a dependency-light HTML/CSS/JS site based on the academic-site-template layout.
+Static academic website for `michaeldaltoneconomics.org`, maintained as a dependency-light HTML/CSS/JS site.
 
 ## Local preview
 
@@ -22,7 +22,7 @@ Then open:
 python3 tools/check_site.py
 ```
 
-The checker verifies required pages and routes, placeholder strings, local internal links, canonical metadata, sitemap domain, `CNAME`, and local CV PDF paths.
+The checker verifies required pages and routes, starter strings, local internal links, canonical metadata, sitemap domain, `CNAME`, local CV PDF paths, and the required `Zombie Papers` section heading.
 
 ## File structure
 
@@ -31,10 +31,12 @@ The checker verifies required pages and routes, placeholder strings, local inter
 - `cv/index.html`: canonical `/cv/` page
 - `contact/index.html`: static contact page with no form dependency
 - `research.html`, `cv.html`, `contact.html`: redirect/canonical helper stubs
-- `assets/css/style.css`: template-derived site styles
+- `assets/css/style.css`: color tokens, layout, and component styles
 - `assets/js/main.js`: theme toggle and active navigation
+- `assets/img/data-mark-logo.svg`: header and sidebar data-mark logo
+- `favicon.svg`: browser favicon
 - `assets/docs/michael-dalton-cv.pdf`: canonical local CV PDF
-- `assets/docs/cv.pdf`: compatibility copy for template-era links
+- `assets/docs/cv.pdf`: compatibility copy for older links
 - `migration_content_inventory.md`: fetched current-site content inventory
 - `MIGRATION_REPORT.md`: migration summary and preserved links
 - `DEPLOYMENT.md`: GitHub Pages and Cloudflare Pages launch runbook
@@ -43,6 +45,9 @@ The checker verifies required pages and routes, placeholder strings, local inter
 
 - Keep the site static: no CMS, database, paid form service, analytics tracker, or server runtime.
 - Preserve public routes `/`, `/research`, and `/cv`.
+- Keep the research heading `Zombie Papers` exactly as written.
+- Keep Palette A and the data-mark logo in `assets/css/style.css`, `assets/img/data-mark-logo.svg`, and `favicon.svg`.
+- Edit research cards directly in `research/index.html`; preserve titles, coauthors, abstracts, publication status, and outbound links.
 - Keep CV links local. Do not hotlink the legacy GoDaddy PDF.
 - When adding a page, update `sitemap.xml`, canonical URLs, navigation if needed, and `tools/check_site.py` if the page becomes required.
 - Use the obfuscated email display `Dalton.Michael at BLS dot gov` in HTML unless Michael explicitly wants a mailto link.

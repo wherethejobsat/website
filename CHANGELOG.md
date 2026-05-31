@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-05-31 - Visual refinement
+
+- Added a compact data-mark logo and favicon using the Palette A blue and copper colors.
+- Reworked the header, homepage, research cards, CV sidebar, contact page, and footer for a calmer data-forward academic presentation.
+- Preserved static routes, local CV links, the BLS disclaimer, and the exact `Zombie Papers` research heading.
+- Updated the validation script, README, and project instructions for the refined visual system.
+
 ## 2026-05-30 - Static site migration
 
 - Migrated the Michael Dalton academic site into a static academic-site-template layout.

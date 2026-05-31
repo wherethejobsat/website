@@ -9,11 +9,11 @@
   <meta property="og:description" content="Download Michael R. Dalton's CV and view a short professional summary.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://michaeldaltoneconomics.org/cv/">
-  <meta property="og:image" content="https://michaeldaltoneconomics.org/assets/img/postal-square-building.jpg">
+  <meta property="og:image" content="https://michaeldaltoneconomics.org/assets/img/data-mark-logo.svg">
   <meta name="twitter:card" content="summary_large_image">
   <title>CV | Michael Dalton</title>
   <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="icon" href="/assets/img/profile.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <script defer src="/assets/js/main.js"></script>
 </head>
 <body>
@@ -22,15 +22,18 @@
 <header class="site-header">
   <div class="header-inner">
     <div class="brand">
-      <a href="/">Michael Dalton</a>
-      <span class="subtitle">Economics | Bureau of Labor Statistics</span>
+      <a class="brand-link" href="/" aria-label="Michael Dalton home">
+        <img class="brand-mark" src="/assets/img/data-mark-logo.svg" alt="" aria-hidden="true">
+        <span class="brand-text">Michael Dalton</span>
+      </a>
+      <span class="subtitle">Labor economics and public data</span>
     </div>
 
     <nav class="nav" aria-label="Primary">
       <a href="/research/">Research</a>
       <a href="/cv/">CV</a>
       <a class="cta" href="/contact/">Contact</a>
-      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme">Theme</button>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle color theme"><span class="theme-glyph" aria-hidden="true"></span></button>
     </nav>
   </div>
 </header>
@@ -38,6 +41,7 @@
 <main class="container" id="content">
   <section class="hero" aria-label="Page header">
     <div class="hero-inner">
+      <p class="hero-kicker">Curriculum vitae</p>
       <h1>Curriculum Vitae</h1>
       <p class="lede">Michael R. Dalton is a Research Economist in the Office of Employment and Unemployment Statistics at the Bureau of Labor Statistics.</p>
       <div class="meta">
@@ -46,10 +50,10 @@
         <div>Email: Dalton.Michael at BLS dot gov</div>
       </div>
       <div class="pills">
-        <span class="pill">Current position</span>
-        <span class="pill">Education</span>
-        <span class="pill">Research</span>
-        <span class="pill">Teaching</span>
+        <a class="pill" href="#current-position">Current position</a>
+        <a class="pill" href="#education">Education</a>
+        <a class="pill" href="#research">Research</a>
+        <a class="pill" href="#teaching">Teaching</a>
       </div>
       <div class="actions">
         <a class="btn primary" href="/assets/docs/michael-dalton-cv.pdf">Download PDF</a>
@@ -59,15 +63,16 @@
   </section>
 
   <section class="grid" aria-label="CV content">
-    <div class="card pad">
+    <div class="cv-flow">
+      <section class="content-block" id="current-position" aria-labelledby="professional-summary-title">
       <div class="section-title stacked">
-        <h2>Professional summary</h2>
+        <h2 id="professional-summary-title">Professional summary</h2>
         <small>Full CV available as PDF.</small>
       </div>
 
       <p>Michael R. Dalton is a Research Economist in the Office of Employment and Unemployment Statistics at the Bureau of Labor Statistics, a position he has held since July 2013. His research interests are labor economics, data science, machine learning, and applied microeconomics.</p>
 
-      <div class="section-title stacked" style="margin-top: 18px;">
+      <div class="section-title stacked" id="education" style="margin-top: 18px;">
         <h2>Education</h2>
       </div>
 
@@ -92,72 +97,87 @@
         </div>
       </div>
 
-      <div class="section-title stacked" style="margin-top: 18px;">
+      <div class="section-title stacked" id="research" style="margin-top: 18px;">
         <h2>Selected publications</h2>
       </div>
 
       <ul class="list">
         <li>
-          <strong>Putting the Paycheck Protection Program into Perspective: An Analysis Using Administrative and Survey Data</strong>
+          <strong><a href="/research/#telework-brs">Telework during the COVID-19 pandemic: estimates using the 2021 Business Response Survey</a></strong>
+          <p>With Jeffrey A. Groen. Monthly Labor Review, 2022.</p>
+        </li>
+        <li>
+          <strong><a href="/research/#ppp">Putting the Paycheck Protection Program into Perspective: An Analysis Using Administrative and Survey Data</a></strong>
           <p>National Tax Journal, 2023.</p>
         </li>
         <li>
-          <strong>The K-Shaped Recovery: Examining the Diverging Fortunes of Workers in the Recovery from the COVID-19 Pandemic Using Business and Household Survey Microdata</strong>
+          <strong><a href="/research/#k-shaped">The K-Shaped Recovery: Examining the Diverging Fortunes of Workers in the Recovery from the COVID-19 Pandemic Using Business and Household Survey Microdata</a></strong>
           <p>With Jeffrey Groen, Mark Loewenstein, David Piccone, Anne Polivka. Journal of Economic Inequality, 2021.</p>
         </li>
         <li>
-          <strong>Overattention to First-Hand Experience in Hiring Decisions: Evidence from Professional Basketball</strong>
+          <strong><a href="/research/#basketball">Overattention to First-Hand Experience in Hiring Decisions: Evidence from Professional Basketball</a></strong>
           <p>With Peter Landry. Journal of Economic Behavior and Organization, 2020.</p>
         </li>
         <li>
-          <strong>Mitigating the Consequences of a Health Condition: The Role of Intra- and Interhousehold Assistance</strong>
+          <strong><a href="/research/#health-condition">Mitigating the Consequences of a Health Condition: The Role of Intra- and Interhousehold Assistance</a></strong>
           <p>With Daniel LaFave. Journal of Health Economics, 2017, 53.</p>
         </li>
       </ul>
 
-      <div class="section-title stacked" style="margin-top: 18px;">
+      <div class="section-title stacked" id="teaching" style="margin-top: 18px;">
         <h2>Teaching and recognition</h2>
       </div>
 
       <ul class="list">
         <li>
           <strong>Teaching experience</strong>
-          <p>Lecturer in Undergraduate Statistics and Undergraduate Econometrics at Catholic University of America; Instructor for Undergraduate Intermediate Microeconomics at Duke University.</p>
+          <p>Lecturer in Undergraduate Statistics and Undergraduate Econometrics at Catholic University of America, 2014-2018.</p>
+          <p>Instructor for Undergraduate Intermediate Microeconomics at Duke University.</p>
         </li>
         <li>
           <strong>Honors and awards</strong>
           <p>Bureau of Labor Statistics Innovation Award, 2021, for work on the Business Response Survey; Bureau of Labor Statistics Innovation Award, 2019, for work on the Quarterly Business Survey.</p>
         </li>
       </ul>
+      </section>
     </div>
 
     <aside class="card pad" aria-label="Sidebar">
+      <div class="section-title stacked">
+        <h2>CV at a glance</h2>
+      </div>
       <div class="profile">
         <div class="avatar">
-          <img src="/assets/img/profile.svg" alt="Michael Dalton monogram">
+          <img src="/assets/img/data-mark-logo.svg" alt="" aria-hidden="true">
         </div>
         <div>
           <div class="name">Michael R. Dalton</div>
-          <div class="role">Research Economist | Bureau of Labor Statistics</div>
+          <div class="role">Research Economist, Bureau of Labor Statistics</div>
           <div class="small">Washington, DC</div>
         </div>
       </div>
 
-      <hr style="border: none; border-top: 1px solid var(--border); margin: 14px 0;">
+      <hr>
 
       <dl class="kv">
-        <dt>Email</dt><dd>Dalton.Michael at BLS dot gov</dd>
-        <dt>PDF</dt><dd><a href="/assets/docs/michael-dalton-cv.pdf">Download CV</a></dd>
+        <dt>Position</dt><dd>Research Economist, Office of Employment and Unemployment Statistics</dd>
+        <dt>Fields</dt><dd>Labor economics, data science, machine learning, applied microeconomics</dd>
+        <dt>Education</dt><dd>Ph.D. Economics, Duke University</dd>
         <dt>Updated</dt><dd>March 6, 2025</dd>
+        <dt>Email</dt><dd>Dalton.Michael at BLS dot gov</dd>
       </dl>
 
+      <div class="actions">
+        <a class="btn primary" href="/assets/docs/michael-dalton-cv.pdf">Download CV</a>
+      </div>
+
       <div class="social" aria-label="Profiles and documents">
-        <a href="/assets/docs/michael-dalton-cv.pdf">CV PDF</a>
         <a href="/research/">Research</a>
         <a class="social-icon-link" href="https://www.linkedin.com/in/mdaltonecon/" rel="noopener" title="LinkedIn profile">
           <img class="social-icon" src="/assets/img/linkedin.svg" alt="">
           <span class="visually-hidden">LinkedIn profile</span>
         </a>
+        <a href="https://scholar.google.com/citations?hl=en&amp;user=C-mmySYAAAAJ" rel="noopener">Google Scholar</a>
       </div>
     </aside>
   </section>

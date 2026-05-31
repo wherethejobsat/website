@@ -1,7 +1,4 @@
-/* Minimal JS:
-   - active nav highlighting
-   - light/dark toggle stored in localStorage
-*/
+/* Minimal JS for active navigation and the optional color-theme toggle. */
 (function () {
   function cleanPath(pathname) {
     var p = pathname || "/";
@@ -42,8 +39,14 @@
 
     function label() {
       var t = document.documentElement.getAttribute("data-theme");
-      if (!t) return "Theme";
-      return t === "dark" ? "Theme: dark" : "Theme: light";
+      return t === "dark" ? "Switch to light color theme" : "Switch to dark color theme";
+    }
+
+    function syncButton() {
+      var isDark = document.documentElement.getAttribute("data-theme") === "dark";
+      btn.setAttribute("aria-label", label());
+      btn.setAttribute("title", label());
+      btn.setAttribute("aria-pressed", isDark ? "true" : "false");
     }
 
     function toggle() {
@@ -51,11 +54,11 @@
       var next = (cur === "dark") ? "light" : "dark";
       document.documentElement.setAttribute("data-theme", next);
       try { localStorage.setItem("siteTheme", next); } catch (e) {}
-      btn.textContent = label();
+      syncButton();
     }
 
     btn.addEventListener("click", toggle);
-    btn.textContent = label();
+    syncButton();
   }
 
   applyStoredTheme();

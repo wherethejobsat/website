@@ -9,11 +9,11 @@
   <meta property="og:description" content="Contact information and links for Michael Dalton.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://michaeldaltoneconomics.org/contact/">
-  <meta property="og:image" content="https://michaeldaltoneconomics.org/assets/img/postal-square-building.jpg">
+  <meta property="og:image" content="https://michaeldaltoneconomics.org/assets/img/data-mark-logo.svg">
   <meta name="twitter:card" content="summary_large_image">
   <title>Contact | Michael Dalton</title>
   <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="icon" href="/assets/img/profile.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <script defer src="/assets/js/main.js"></script>
 </head>
 <body>
@@ -22,15 +22,18 @@
 <header class="site-header">
   <div class="header-inner">
     <div class="brand">
-      <a href="/">Michael Dalton</a>
-      <span class="subtitle">Economics | Bureau of Labor Statistics</span>
+      <a class="brand-link" href="/" aria-label="Michael Dalton home">
+        <img class="brand-mark" src="/assets/img/data-mark-logo.svg" alt="" aria-hidden="true">
+        <span class="brand-text">Michael Dalton</span>
+      </a>
+      <span class="subtitle">Labor economics and public data</span>
     </div>
 
     <nav class="nav" aria-label="Primary">
       <a href="/research/">Research</a>
       <a href="/cv/">CV</a>
       <a class="cta" href="/contact/">Contact</a>
-      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme">Theme</button>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle color theme"><span class="theme-glyph" aria-hidden="true"></span></button>
     </nav>
   </div>
 </header>
@@ -38,6 +41,7 @@
 <main class="container" id="content">
   <section class="hero" aria-label="Page header">
     <div class="hero-inner">
+      <p class="hero-kicker">Contact</p>
       <h1>Contact</h1>
       <p class="lede">Contact information and key links for Michael Dalton.</p>
       <div class="meta">
@@ -53,10 +57,11 @@
   </section>
 
   <section class="grid" aria-label="Contact content">
-    <div class="card pad">
+    <div class="contact-flow">
+      <section class="content-block" aria-labelledby="contact-details-title">
       <div class="section-title stacked">
-        <h2>Contact details</h2>
-        <small>No contact form is used, so this static site has no form-service dependency.</small>
+        <h2 id="contact-details-title">Contact details</h2>
+        <small>This static site does not use a contact form.</small>
       </div>
 
       <dl class="kv">
@@ -66,7 +71,7 @@
         <dt>Website</dt><dd><a href="https://michaeldaltoneconomics.org/">michaeldaltoneconomics.org</a></dd>
       </dl>
 
-      <hr style="border: none; border-top: 1px solid var(--border); margin: 16px 0;">
+      <hr>
 
       <div class="section-title stacked">
         <h2>Links</h2>
@@ -77,27 +82,30 @@
           <img class="social-icon" src="/assets/img/linkedin.svg" alt="">
           <span class="visually-hidden">LinkedIn profile</span>
         </a>
+        <a href="https://scholar.google.com/citations?hl=en&amp;user=C-mmySYAAAAJ" rel="noopener">Google Scholar</a>
         <a href="/research/">Research</a>
         <a href="/cv/">CV</a>
         <a href="/assets/docs/michael-dalton-cv.pdf">CV PDF</a>
       </div>
+      </section>
     </div>
 
     <aside class="card pad" aria-label="Sidebar">
       <div class="profile">
         <div class="avatar">
-          <img src="/assets/img/profile.svg" alt="Michael Dalton monogram">
+          <img src="/assets/img/data-mark-logo.svg" alt="" aria-hidden="true">
         </div>
         <div>
           <div class="name">Michael R. Dalton</div>
-          <div class="role">Research Economist | Bureau of Labor Statistics</div>
+          <div class="role">Research Economist, Bureau of Labor Statistics</div>
           <div class="small">Washington, DC</div>
         </div>
       </div>
 
-      <hr style="border: none; border-top: 1px solid var(--border); margin: 14px 0;">
+      <hr>
 
       <p class="small">For email, use the readable obfuscated address shown on this page: Dalton.Michael at BLS dot gov.</p>
+      <p class="small">Views expressed here are my own and do not necessarily reflect the views of the Bureau of Labor Statistics.</p>
     </aside>
   </section>
 </main>

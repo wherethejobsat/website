@@ -9,11 +9,11 @@
   <meta property="og:description" content="Working papers, publications, BLS publications, and archived research by Michael Dalton.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://michaeldaltoneconomics.org/research/">
-  <meta property="og:image" content="https://michaeldaltoneconomics.org/assets/img/postal-square-building.jpg">
+  <meta property="og:image" content="https://michaeldaltoneconomics.org/assets/img/data-mark-logo.svg">
   <meta name="twitter:card" content="summary_large_image">
   <title>Research | Michael Dalton</title>
   <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="icon" href="/assets/img/profile.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <script defer src="/assets/js/main.js"></script>
 </head>
 <body>
@@ -22,15 +22,18 @@
 <header class="site-header">
   <div class="header-inner">
     <div class="brand">
-      <a href="/">Michael Dalton</a>
-      <span class="subtitle">Economics | Bureau of Labor Statistics</span>
+      <a class="brand-link" href="/" aria-label="Michael Dalton home">
+        <img class="brand-mark" src="/assets/img/data-mark-logo.svg" alt="" aria-hidden="true">
+        <span class="brand-text">Michael Dalton</span>
+      </a>
+      <span class="subtitle">Labor economics and public data</span>
     </div>
 
     <nav class="nav" aria-label="Primary">
       <a href="/research/">Research</a>
       <a href="/cv/">CV</a>
       <a class="cta" href="/contact/">Contact</a>
-      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme">Theme</button>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle color theme"><span class="theme-glyph" aria-hidden="true"></span></button>
     </nav>
   </div>
 </header>
@@ -38,17 +41,18 @@
 <main class="container" id="content">
   <section class="hero" aria-label="Page header">
     <div class="hero-inner">
+      <p class="hero-kicker">Research portfolio</p>
       <h1>Research Projects</h1>
-      <p class="lede">Working papers, works in progress, publications, Bureau of Labor Statistics publications, and older archived papers.</p>
+      <p class="lede">Working papers, works in progress, publications, Bureau of Labor Statistics publications, and older inactive projects preserved for reference.</p>
       <div class="meta">
         <div>Fields: labor economics, data science, machine learning, applied microeconomics</div>
         <div>Current position: Research Economist, BLS</div>
       </div>
       <div class="pills">
-        <span class="pill">Working Papers</span>
-        <span class="pill">Works in Progress</span>
-        <span class="pill">Publications</span>
-        <span class="pill">BLS Publications</span>
+        <a class="pill" href="#working-papers">Working Papers</a>
+        <a class="pill" href="#works-in-progress">Works in Progress</a>
+        <a class="pill" href="#publications">Publications</a>
+        <a class="pill" href="#bls-publications">BLS Publications</a>
       </div>
       <div class="actions">
         <a class="btn primary" href="/assets/docs/michael-dalton-cv.pdf">Download CV</a>
@@ -58,17 +62,44 @@
   </section>
 
   <section class="grid" aria-label="Research content">
-    <div class="card pad">
+    <div class="research-stack">
+      <section class="research-section" id="working-papers" aria-labelledby="working-papers-title">
       <div class="section-title stacked">
-        <h2>Working Papers</h2>
-        <small>Abstracts are preserved from the live site and are collapsible for scanning.</small>
+        <h2 id="working-papers-title">Working Papers</h2>
+        <small>Abstracts are in the page HTML and collapsed for scanning.</small>
       </div>
+
+      <article class="entry" id="workforce-development">
+        <div><span class="badge">2026</span></div>
+        <h3>Do Workforce Development Programs Bridge the Skills Gap?</h3>
+        <p class="byline">Eleanor W. Dillon, Lisa B. Kahn, Joanna Venator, and Michael Dalton</p>
+        <p class="venue">NBER Working Paper 34012. Issue date: July 2025. Revision date: April 2026.</p>
+        <div class="entry-tags" aria-label="Topics and data">
+          <span class="tag">Workforce development</span>
+          <span class="tag">Firm training</span>
+          <span class="tag accent">Employment and vacancies</span>
+        </div>
+        <div class="entry-links">
+          <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=C-mmySYAAAAJ&amp;citation_for_view=C-mmySYAAAAJ:u-x6o8ySG0sC" rel="noopener">Google Scholar</a>
+          <a href="https://www.nber.org/papers/w34012" rel="noopener">NBER page</a>
+          <a href="https://doi.org/10.3386/w34012" rel="noopener">DOI</a>
+        </div>
+        <details>
+          <summary>Abstract</summary>
+          <p>Most U.S. states have workforce development programs that offer firms grants to train their own workers. We create unique data linkages between participating firms, employment, and vacancies to explore the determinants and consequences of such programs. Training grants are more prevalent in markets where firms face greater employee poaching risk, suggesting these programs help overcome a market failure in updating worker skills. After training, firms experience prolonged employment growth and downskilling in their job posts, relative to a matched control group. Training appears to help firms move toward optimal scale and expand opportunities for less skilled workers.</p>
+        </details>
+      </article>
 
       <article class="entry" id="remote-work">
         <div><span class="badge">2022</span></div>
         <h3>The Impact of Remote Work on Local Employment, Business Relocation, and Local Home Costs</h3>
         <p class="byline">with Matt Dey and Mark Loewenstein</p>
         <p class="venue">Presentation: Stanford University Remote Work Conference.</p>
+        <div class="entry-tags" aria-label="Topics and data">
+          <span class="tag">Remote work</span>
+          <span class="tag">Establishments</span>
+          <span class="tag accent">BLS / ACS / QCEW / Zillow</span>
+        </div>
         <div class="entry-links">
           <a href="https://www.bls.gov/osmr/research-papers/2022/pdf/ec220080.pdf" rel="noopener">Download Paper</a>
           <a href="https://youtu.be/KF2GBaFShL4?t=13023" rel="noopener">Presentation: Stanford University Remote Work Conference</a>
@@ -79,25 +110,16 @@
         </details>
       </article>
 
-      <article class="entry" id="ppp">
-        <div><span class="badge">2021</span></div>
-        <h3>Putting the Paycheck Protection Program into Perspective: An Analysis Using Administrative and Survey Data</h3>
-        <div class="entry-links">
-          <a href="https://www.bls.gov/osmr/research-papers/2021/pdf/ec210080.pdf" rel="noopener">Download Paper</a>
-          <a href="https://www.nytimes.com/2022/02/01/business/paycheck-protection-program-costs.html" rel="noopener">Coverage: New York Times [1]</a>
-          <a href="https://www.nytimes.com/interactive/2022/03/11/us/how-covid-stimulus-money-was-spent.html" rel="noopener">Coverage: New York Times [2]</a>
-        </div>
-        <details>
-          <summary>Abstract</summary>
-          <p>After matching over 3 million loans from the $669 billion Paycheck Protection Program to administrative wage records, I estimate a doubly robust dynamic difference-in-difference event study showing robust, causal impacts of the loans on employment, wages, and opening status of establishments 7 months after PPP approval. Doing back-of-the-envelope calculations, I find a range of $20,000 to $34,000 of PPP spent per employee-month retained, with about 24% of the PPP money going towards wage retention in the baseline model. Small and low-wage establishments show the largest impact from PPP.</p>
-        </details>
-      </article>
-
       <article class="entry" id="employer-size-update">
         <div><span class="badge">2020</span></div>
         <h3>An Update on Employment changes by employer size during the COVID-19 pandemic: a look at the Current Employment Statistics survey microdata</h3>
         <p class="byline">with Elizabeth Weber Handwerker and Mark A. Loewenstein</p>
         <p class="venue">Slides presented at NBER 2021 Summer Workshop. Coverage: Wall Street Journal.</p>
+        <div class="entry-tags" aria-label="Topics and data">
+          <span class="tag">Employer size</span>
+          <span class="tag">COVID-19</span>
+          <span class="tag accent">CES microdata</span>
+        </div>
         <div class="entry-links">
           <a href="https://www.bls.gov/osmr/research-papers/2020/ec200140.htm" rel="noopener">BLS page</a>
           <a href="https://www.bls.gov/osmr/research-papers/2020/pdf/ec200140.pdf" rel="noopener">Download Paper</a>
@@ -110,29 +132,39 @@
         </details>
       </article>
 
-      <hr style="border: none; border-top: 1px solid var(--border); margin: 18px 0;">
+      </section>
 
-      <div class="section-title stacked">
-        <h2>Works in Progress</h2>
-      </div>
+      <section class="research-section" id="works-in-progress" aria-labelledby="works-in-progress-title">
+        <div class="section-title stacked">
+          <h2 id="works-in-progress-title">Works in Progress</h2>
+        </div>
+
+      <article class="entry" id="online-job-postings">
+        <div><span class="badge">2026</span></div>
+        <h3>Do Online Job Postings Capture Job Vacancies? An Analysis of Matched Online Postings and Vacancy Survey Data</h3>
+        <p class="byline">with Lisa Kahn and Andreas Mueller</p>
+        <div class="entry-tags" aria-label="Topics and data">
+          <span class="tag">Vacancies</span>
+          <span class="tag">Online postings</span>
+          <span class="tag accent">Matched survey data</span>
+        </div>
+        <div class="entry-links">
+          <a href="https://sites.google.com/site/lbkahn/" rel="noopener">Lisa Kahn</a>
+          <a href="https://sites.google.com/view/andreasimueller/" rel="noopener">Andreas Mueller</a>
+        </div>
+      </article>
 
       <article class="entry" id="heat-injuries">
         <div><span class="badge">2021</span></div>
         <h3>Heat and Injuries on the Job</h3>
         <p class="byline">with A. Patrick Behrer and Jisung Park</p>
+        <div class="entry-tags" aria-label="Topics">
+          <span class="tag">Heat</span>
+          <span class="tag">Workplace injuries</span>
+        </div>
         <div class="entry-links">
           <a href="https://www.apatrickbehrer.com/" rel="noopener">A. Patrick Behrer</a>
           <a href="http://rjisungpark.com/" rel="noopener">Jisung Park</a>
-        </div>
-      </article>
-
-      <article class="entry" id="online-job-postings">
-        <div><span class="badge">2021</span></div>
-        <h3>Do Online Job Postings Capture Job Vacancies? An Analysis of Matched Online Postings and Vacancy Survey Data</h3>
-        <p class="byline">with Lisa Kahn and Andreas Mueller</p>
-        <div class="entry-links">
-          <a href="https://sites.google.com/site/lbkahn/" rel="noopener">Lisa Kahn</a>
-          <a href="https://sites.google.com/view/andreasimueller/" rel="noopener">Andreas Mueller</a>
         </div>
       </article>
 
@@ -140,19 +172,52 @@
         <div><span class="badge">2020</span></div>
         <h3>The Evolution of Job Search while Unemployed</h3>
         <p class="byline">with Jeffrey Groen</p>
+        <div class="entry-tags" aria-label="Topics">
+          <span class="tag">Job search</span>
+          <span class="tag">Unemployment</span>
+        </div>
       </article>
 
-      <hr style="border: none; border-top: 1px solid var(--border); margin: 18px 0;">
+      </section>
 
-      <div class="section-title stacked">
-        <h2>Publications</h2>
-      </div>
+      <section class="research-section" id="publications" aria-labelledby="publications-title">
+        <div class="section-title stacked">
+          <h2 id="publications-title">Publications</h2>
+        </div>
+
+      <article class="entry" id="ppp">
+        <div><span class="badge">National Tax Journal, 2023</span></div>
+        <h3>Putting the Paycheck Protection Program into Perspective: An Analysis Using Administrative and Survey Data</h3>
+        <p class="byline">Michael Dalton</p>
+        <p class="venue">National Tax Journal 76, no. 2 (2023): 393-437.</p>
+        <div class="entry-tags" aria-label="Topics and data">
+          <span class="tag">PPP</span>
+          <span class="tag">Employment</span>
+          <span class="tag accent">Administrative and survey data</span>
+        </div>
+        <div class="entry-links">
+          <a href="https://www.journals.uchicago.edu/doi/abs/10.1086/724591" rel="noopener">Article</a>
+          <a href="https://doi.org/10.1086/724591" rel="noopener">DOI</a>
+          <a href="https://www.bls.gov/osmr/research-papers/2021/pdf/ec210080.pdf" rel="noopener">Earlier working paper</a>
+          <a href="https://www.nytimes.com/2022/02/01/business/paycheck-protection-program-costs.html" rel="noopener">Coverage: New York Times [1]</a>
+          <a href="https://www.nytimes.com/interactive/2022/03/11/us/how-covid-stimulus-money-was-spent.html" rel="noopener">Coverage: New York Times [2]</a>
+        </div>
+        <details>
+          <summary>Abstract</summary>
+          <p>After matching more than 3 million loans from the $669 billion Paycheck Protection Program (PPP) to administrative wage records, I estimate a dynamic difference-in-difference event study showing robust impacts of the loans on employment, wages, and opening status of establishments 15 months after PPP approval. Between $12,000 and $19,000 of PPP loans are spent per employee-month retained 15 months postapproval, with 43 percent of the PPP going toward wage retention in the baseline model. The smallest employers show the largest impact, explaining disparate results from prior papers focusing on larger employers. Properly accounting for closures is key to understanding the PPP's long-term impact.</p>
+        </details>
+      </article>
 
       <article class="entry" id="k-shaped">
         <div><span class="badge">Journal of Economic Inequality, 2021</span></div>
         <h3>The K-Shaped Recovery: Examining the diverging fortunes of workers in the recovery from the COVID-19 pandemic using business and household survey microdata</h3>
         <p class="byline">Dalton, Michael, Jeffrey A. Groen, Mark A. Loewenstein, David S. Piccone, and Anne E. Polivka.</p>
         <p class="venue">The Journal of Economic Inequality 19, no. 3 (2021): 527-550.</p>
+        <div class="entry-tags" aria-label="Topics and data">
+          <span class="tag">COVID-19 recovery</span>
+          <span class="tag">Wage groups</span>
+          <span class="tag accent">Business and household surveys</span>
+        </div>
         <div class="entry-links">
           <a href="https://link.springer.com/article/10.1007/s10888-021-09506-6" rel="noopener">Article</a>
           <a href="https://link.springer.com/content/pdf/10.1007/s10888-021-09506-6.pdf" rel="noopener">PDF</a>
@@ -167,6 +232,10 @@
         <div><span class="badge">Journal of Economic Behavior and Organization, 2020</span></div>
         <h3>Overattention to First-Hand Experience in Hiring Decisions: Evidence from Professional Basketball</h3>
         <p class="byline">with Peter Landry</p>
+        <div class="entry-tags" aria-label="Topics">
+          <span class="tag">Hiring decisions</span>
+          <span class="tag">Behavioral labor</span>
+        </div>
         <div class="entry-links">
           <a href="https://img1.wsimg.com/blobby/go/de39cd4b-4868-47c8-bdb3-a2c6f7313984/downloads/nba_FINAL.pdf?ver=1591229303181" rel="noopener">Download Paper</a>
           <a href="https://sites.google.com/site/peterlandryecon/home" rel="noopener">Peter Landry</a>
@@ -182,6 +251,11 @@
         <h3>Employment changes by employer size using the Current Employment Statistics Survey microdata during the COVID-19 pandemic</h3>
         <p class="byline">Michael Dalton, Elizabeth Weber Handwerker, and Mark A. Loewenstein</p>
         <p class="venue">Covid Economics, Issue 46, September 2020.</p>
+        <div class="entry-tags" aria-label="Topics and data">
+          <span class="tag">Employer size</span>
+          <span class="tag">COVID-19</span>
+          <span class="tag accent">CES microdata</span>
+        </div>
         <details>
           <summary>Abstract</summary>
           <p>We use the Current Employment Statistics survey microdata for the private sector to calculate employment changes since February 2020 by employer size. We find that, for employers with 1 to 9 employees, the largest component of employment change since February is closings (either temporary or permanent) in all months. For employers with 10 or more employees, the largest component of employment change since February is within employers that have continued to report nonzero employment to the survey, rather than within those reporting zero employment or from imputed closures from nonrespondents to the survey. In percentage terms, the greatest overall employment losses shifted to larger and larger employers each month from March through July. However, the largest employers recovered employment faster than smaller employers from July to September. By September, the largest cumulative employment losses were for employers with 50 to 499 employees, with employment losses of 6.5 percent since February. Meanwhile, by September, employers with 1 to 9 employees had employment losses of 3.3 percent since February.</p>
@@ -193,6 +267,10 @@
         <h3>Mitigating the Consequences of a Health Condition: The Role of Intra- and Interhousehold Assistance</h3>
         <p class="byline">with Daniel LaFave</p>
         <p class="venue">Journal of Health Economics, 2017, 53.</p>
+        <div class="entry-tags" aria-label="Topics">
+          <span class="tag">Health shocks</span>
+          <span class="tag">Family support</span>
+        </div>
         <div class="entry-links">
           <a href="http://web.colby.edu/drlafave/files/2017/03/daltonlafave2017jhe.pdf" rel="noopener">Download Paper</a>
           <a href="http://web.colby.edu/drlafave/" rel="noopener">Daniel LaFave</a>
@@ -203,17 +281,22 @@
         </details>
       </article>
 
-      <hr style="border: none; border-top: 1px solid var(--border); margin: 18px 0;">
+      </section>
 
-      <div class="section-title stacked">
-        <h2>Bureau of Labor Statistics Publications</h2>
-      </div>
+      <section class="research-section" id="bls-publications" aria-labelledby="bls-publications-title">
+        <div class="section-title stacked">
+          <h2 id="bls-publications-title">Bureau of Labor Statistics Publications</h2>
+        </div>
 
       <article class="entry" id="telework-brs">
         <div><span class="badge">Monthly Labor Review, 2022</span></div>
         <h3>Telework during the COVID-19 pandemic: estimates using the 2021 Business Response Survey</h3>
         <p class="byline">Michael Dalton and Jeffrey A. Groen</p>
         <p class="venue">Monthly Labor Review, U.S. Bureau of Labor Statistics, March 2022.</p>
+        <div class="entry-tags" aria-label="Topics and data">
+          <span class="tag">Telework</span>
+          <span class="tag accent">Business Response Survey</span>
+        </div>
         <div class="entry-links">
           <a href="https://doi.org/10.21916/mlr.2022.8" rel="noopener">DOI</a>
         </div>
@@ -229,6 +312,11 @@
         <p class="byline">Michael Dalton, Elizabeth Weber Handwerker, and Mark A. Loewenstein</p>
         <p class="venue">Monthly Labor Review, U.S. Bureau of Labor Statistics, October 2020.</p>
         <p class="venue">Earlier version: Michael Dalton, Elizabeth Weber Handwerker, and Mark A. Loewenstein, "Employment changes by employer size using the Current Employment Statistics Survey microdata during the COVID-19 pandemic." Covid Economics, Issue 46, September 2020.</p>
+        <div class="entry-tags" aria-label="Topics and data">
+          <span class="tag">Employer size</span>
+          <span class="tag">COVID-19</span>
+          <span class="tag accent">CES microdata</span>
+        </div>
         <div class="entry-links">
           <a href="https://doi.org/10.21916/mlr.2020.23" rel="noopener">DOI</a>
         </div>
@@ -243,6 +331,11 @@
         <h3>How do jobseekers search for jobs? New data on applications, interviews, and job offers</h3>
         <p class="byline">Michael R. Dalton and Jeffrey A. Groen</p>
         <p class="venue">Beyond the Numbers: Employment &amp; Unemployment, vol. 9, no. 14 (U.S. Bureau of Labor Statistics, November 2020).</p>
+        <div class="entry-tags" aria-label="Topics and data">
+          <span class="tag">Job search</span>
+          <span class="tag">Applications</span>
+          <span class="tag accent">CPS supplement</span>
+        </div>
         <div class="entry-links">
           <a href="https://www.bls.gov/opub/btn/volume-9/how-do-jobseekers-search-for-jobs.htm" rel="noopener">Article</a>
           <a href="https://www.bls.gov/opub/btn/volume-9/pdf/how-do-jobseekers-search-for-jobs.pdf" rel="noopener">Download Paper</a>
@@ -259,6 +352,11 @@
         <h3>Geographic impact of COVID-19 in BLS surveys by industry</h3>
         <p class="byline">Michael Dalton</p>
         <p class="venue">Monthly Labor Review, U.S. Bureau of Labor Statistics, August 2020.</p>
+        <div class="entry-tags" aria-label="Topics and data">
+          <span class="tag">Geography</span>
+          <span class="tag">Industry employment</span>
+          <span class="tag accent">CES / CPS microdata</span>
+        </div>
         <div class="entry-links">
           <a href="https://doi.org/10.21916/mlr.2020.17" rel="noopener">DOI</a>
         </div>
@@ -268,39 +366,51 @@
         </details>
       </article>
 
-      <hr style="border: none; border-top: 1px solid var(--border); margin: 18px 0;">
+      </section>
 
-      <div class="section-title stacked">
-        <h2>Zombie Papers</h2>
-        <small>Older / archived papers preserved from the live site.</small>
-      </div>
+      <section class="research-section" id="zombie-papers" aria-labelledby="zombie-papers-title">
+        <div class="section-title stacked">
+          <h2 id="zombie-papers-title">Zombie Papers</h2>
+          <small>Older inactive projects preserved for reference.</small>
+        </div>
 
       <article class="entry" id="informal-family-insurance">
         <div><span class="badge">2018</span></div>
         <h3>Measuring the Mechanisms of Informal Family Insurance</h3>
         <p class="byline">with Daniel LaFave</p>
+        <div class="entry-tags" aria-label="Topics">
+          <span class="tag">Family insurance</span>
+        </div>
       </article>
 
       <article class="entry" id="family-decision-making">
         <div><span class="badge">2017</span></div>
         <h3>Resources, Composition and Family Decision Making</h3>
         <p class="byline">with V. Joseph Hotz and Duncan Thomas</p>
+        <div class="entry-tags" aria-label="Topics">
+          <span class="tag">Family decision making</span>
+        </div>
       </article>
 
       <article class="entry" id="family-transfers">
         <div><span class="badge">2013</span></div>
         <h3>Family Transfers in Response to Unemployment</h3>
+        <div class="entry-tags" aria-label="Topics">
+          <span class="tag">Transfers</span>
+          <span class="tag">Unemployment</span>
+        </div>
       </article>
+      </section>
     </div>
 
-    <aside class="card pad" aria-label="Sidebar">
+    <aside class="card pad toc-card" aria-label="Research sidebar">
       <div class="profile">
         <div class="avatar">
-          <img src="/assets/img/profile.svg" alt="Michael Dalton monogram">
+          <img src="/assets/img/data-mark-logo.svg" alt="" aria-hidden="true">
         </div>
         <div>
           <div class="name">Michael R. Dalton</div>
-          <div class="role">Research Economist | Bureau of Labor Statistics</div>
+          <div class="role">Research Economist, Bureau of Labor Statistics</div>
           <div class="small">Washington, DC</div>
         </div>
       </div>
@@ -313,11 +423,25 @@
         <dt>CV</dt><dd><a href="/assets/docs/michael-dalton-cv.pdf">Download PDF</a></dd>
       </dl>
 
+      <hr>
+
+      <div class="section-title stacked">
+        <h2>Sections</h2>
+      </div>
+      <nav class="jump-list" aria-label="Research section links">
+        <a href="#working-papers">Working Papers</a>
+        <a href="#works-in-progress">Works in Progress</a>
+        <a href="#publications">Publications</a>
+        <a href="#bls-publications">BLS Publications</a>
+        <a href="#zombie-papers">Zombie Papers</a>
+      </nav>
+
       <div class="social" aria-label="Profiles and documents">
         <a class="social-icon-link" href="https://www.linkedin.com/in/mdaltonecon/" rel="noopener" title="LinkedIn profile">
           <img class="social-icon" src="/assets/img/linkedin.svg" alt="">
           <span class="visually-hidden">LinkedIn profile</span>
         </a>
+        <a href="https://scholar.google.com/citations?hl=en&amp;user=C-mmySYAAAAJ" rel="noopener">Google Scholar</a>
         <a href="/cv/">CV page</a>
         <a href="/contact/">Contact</a>
       </div>
