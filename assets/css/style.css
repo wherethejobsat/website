@@ -529,49 +529,6 @@ html[data-theme="dark"] .site-header {
   color: var(--muted);
 }
 
-.research-map {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 10px;
-  align-items: stretch;
-}
-
-.map-node {
-  position: relative;
-  min-height: 86px;
-  padding: 14px 12px 12px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--surface);
-}
-
-.map-node::before {
-  content: "";
-  display: block;
-  width: 28px;
-  height: 5px;
-  margin-bottom: 10px;
-  border-radius: 999px;
-  background: var(--primary);
-}
-
-.map-node:nth-child(2)::before,
-.map-node:nth-child(4)::before {
-  background: var(--accent);
-}
-
-.map-node strong {
-  display: block;
-  color: var(--text);
-}
-
-.map-node span {
-  display: block;
-  margin-top: 3px;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
 .list {
   margin: 0;
   padding: 0;
@@ -728,19 +685,6 @@ details p {
   margin-top: 12px;
 }
 
-.social a.social-icon-link {
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  padding: 8px;
-}
-
-.social-icon {
-  width: 20px;
-  height: 20px;
-  display: block;
-}
-
 .timeline {
   display: grid;
   gap: 10px;
@@ -818,10 +762,6 @@ hr {
   .grid,
   .page-grid,
   .feature-grid,
-  .research-map {
-    grid-template-columns: 1fr;
-  }
-
   .toc-card {
     position: static;
   }
