@@ -303,18 +303,38 @@ def check_research_network(errors):
                 errors.append(f"research-network.json edge references missing node: {endpoint}")
 
     paper_nodes = [node for node in nodes if isinstance(node, dict) and node.get("type") == "paper"]
+    structured_fields = {
+        "topics": "topic",
+        "data_sources": "data_source",
+        "techniques": "technique",
+        "empirical_objects": "empirical_object",
+        "outcomes": "outcome",
+    }
+    required_paper_fields = tuple(structured_fields) + ("data_type",)
     for node in paper_nodes:
         missing = [key for key in ("id", "label", "title", "href") if not node.get(key)]
         if missing:
             errors.append(f"paper node {node.get('id', '<missing>')} is missing required fields: {', '.join(missing)}")
+        for field in required_paper_fields:
+            values = node.get(field)
+            if not isinstance(values, list) or not values:
+                errors.append(f"paper node {node.get('id', '<missing>')} must define nonempty {field}")
+            elif not all(isinstance(value, str) and value.strip() for value in values):
+                errors.append(f"paper node {node.get('id', '<missing>')} has invalid {field} labels")
 
     type_counts = {}
     for node in nodes:
         if isinstance(node, dict):
             type_counts[node.get("type")] = type_counts.get(node.get("type"), 0) + 1
-    for required_type in ("topic", "data", "method"):
-        if type_counts.get(required_type, 0) < 1:
-            errors.append(f"research-network.json must include at least one {required_type} node")
+    for field, required_type in structured_fields.items():
+        has_structured_labels = any(
+            isinstance(node.get(field), list) and node.get(field)
+            for node in paper_nodes
+        )
+        if type_counts.get(required_type, 0) < 1 and not has_structured_labels:
+            errors.append(
+                f"research-network.json must include at least one {required_type} node or structured {field}"
+            )
 
     categories = {node.get("category") for node in paper_nodes if node.get("category")}
     if "Zombie Papers" not in categories:

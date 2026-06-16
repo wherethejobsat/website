@@ -1,4 +1,4 @@
-/* Vanilla SVG research network for the homepage. */
+/* Vanilla SVG research network for the Research Map page. */
 (function () {
   var root = document.querySelector("[data-research-network]");
   if (!root) return;
@@ -10,6 +10,140 @@
   var dataUrl = root.getAttribute("data-network-src") || "/assets/data/research-network.json";
   var svgNS = "http://www.w3.org/2000/svg";
   var categoryOrder = ["All", "Working Papers", "Works in Progress", "Publications", "BLS Publications", "Zombie Papers"];
+  var metadataSpecs = [
+    {
+      field: "topics",
+      type: "topic",
+      heading: "Topics",
+      idPrefix: "topic",
+      x: 90,
+      yStart: 70,
+      yStep: 92,
+      labels: [
+        "workforce development",
+        "remote work / telework",
+        "pandemic employment",
+        "employer size",
+        "vacancies",
+        "workplace injuries",
+        "job search",
+        "Paycheck Protection Program",
+        "hiring decisions",
+        "family and household networks"
+      ],
+      aliases: {
+        "skills gap": "workforce development",
+        "firm training": "workforce development",
+        "remote work": "remote work / telework",
+        "telework": "remote work / telework",
+        "workplace adjustment": "remote work / telework",
+        "pandemic work arrangements": "remote work / telework",
+        "business closures": "pandemic employment",
+        "pandemic recovery": "pandemic employment",
+        "local COVID shocks": "pandemic employment",
+        "industry heterogeneity": "pandemic employment",
+        "online job postings": "vacancies",
+        "labor-market measurement": "vacancies",
+        "heat": "workplace injuries",
+        "occupational safety": "workplace injuries",
+        "search behavior": "job search",
+        "search frictions": "job search",
+        "unemployment": "job search",
+        "small businesses": "Paycheck Protection Program",
+        "pandemic policy": "Paycheck Protection Program",
+        "behavioral labor economics": "hiring decisions",
+        "salience": "hiring decisions",
+        "health shocks": "family and household networks",
+        "family networks": "family and household networks",
+        "informal insurance": "family and household networks",
+        "household finance": "family and household networks",
+        "informal family insurance": "family and household networks",
+        "family decision making": "family and household networks",
+        "household resources": "family and household networks",
+        "family transfers": "family and household networks"
+      }
+    },
+    {
+      field: "empirical_objects",
+      type: "empirical_object",
+      heading: "Empirical objects",
+      idPrefix: "object",
+      x: 410,
+      yStart: 70,
+      yStep: 92,
+      labels: [
+        "establishment",
+        "firm",
+        "industry",
+        "worker",
+        "household",
+        "family network",
+        "job posting/vacancy",
+        "local geography",
+        "jobseeker/search event",
+        "player/team"
+      ],
+      aliases: {
+        "employer": "firm",
+        "EIN": "firm",
+        "loan recipient": "firm",
+        "job": "worker",
+        "individual": "household",
+        "noncoresident family member": "family network",
+        "job posting": "job posting/vacancy",
+        "vacancy": "job posting/vacancy",
+        "labor-market cell": "job posting/vacancy",
+        "local labor market": "local geography",
+        "ZIP code": "local geography",
+        "Census tract": "local geography",
+        "housing market": "local geography",
+        "county": "local geography",
+        "MSA": "local geography",
+        "unemployed jobseeker": "jobseeker/search event",
+        "unemployment spell": "jobseeker/search event",
+        "application": "jobseeker/search event",
+        "interview": "jobseeker/search event",
+        "job offer": "jobseeker/search event",
+        "unemployed worker": "jobseeker/search event",
+        "player": "player/team",
+        "team": "player/team",
+        "hiring match": "player/team",
+        "family": "family network"
+      }
+    },
+    {
+      field: "data_sources",
+      type: "data_source",
+      heading: "Data sources",
+      idPrefix: "data-source",
+      x: 760,
+      yStart: 70,
+      yStep: 92,
+      labels: [
+        "QCEW",
+        "CES",
+        "CPS",
+        "BRS",
+        "PSID",
+        "JOLTS",
+        "SOII",
+        "OEWS",
+        "SBA PPP loan records",
+        "online job postings"
+      ],
+      aliases: {
+        "QCEW employment records": "QCEW",
+        "QCEW employer-size frame": "QCEW",
+        "QCEW wage records": "QCEW",
+        "QCEW wage baseline": "QCEW",
+        "QCEW sampling frame": "QCEW",
+        "CES microdata": "CES",
+        "CPS microdata": "CPS",
+        "2018 CPS job-search supplement": "CPS",
+        "2021 BRS": "BRS"
+      }
+    }
+  ];
   var state = {
     nodes: [],
     edges: [],
@@ -17,7 +151,9 @@
     adjacency: {},
     selectedId: null,
     hoverId: null,
-    filter: "All"
+    filter: "All",
+    canvasWidth: 1180,
+    canvasHeight: 1180
   };
 
   function svgEl(tag, attrs) {
@@ -39,11 +175,138 @@
     while (node.firstChild) node.removeChild(node.firstChild);
   }
 
+  function typeClass(type) {
+    return (type || "paper").replace(/_/g, "-");
+  }
+
   function formatType(type) {
-    if (type === "data") return "Data";
-    if (type === "method") return "Method";
+    if (type === "data" || type === "data_source") return "Data source";
+    if (type === "empirical_object") return "Empirical object";
     if (type === "topic") return "Topic";
     return "Paper";
+  }
+
+  function labelsFor(node, field) {
+    if (!Array.isArray(node[field])) return [];
+    return node[field].map(function (label) {
+      return String(label).trim();
+    }).filter(Boolean);
+  }
+
+  function mapLabel(spec, label) {
+    return (spec.aliases && spec.aliases[label]) || label;
+  }
+
+  function mapLabelsFor(node, spec) {
+    var allowed = new Set(spec.labels);
+    var seen = new Set();
+    return labelsFor(node, spec.field).map(function (label) {
+      return mapLabel(spec, label);
+    }).filter(function (label) {
+      if (!allowed.has(label) || seen.has(label)) return false;
+      seen.add(label);
+      return true;
+    });
+  }
+
+  function slugify(value) {
+    return String(value).toLowerCase()
+      .replace(/&/g, " and ")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+  }
+
+  function uniqueNodeId(baseId, usedIds) {
+    var base = baseId || "node";
+    var id = base;
+    var index = 2;
+    while (usedIds[id]) {
+      id = base + "-" + index;
+      index += 1;
+    }
+    usedIds[id] = true;
+    return id;
+  }
+
+  function addEdge(edges, edgeKeys, sourceId, targetId) {
+    var key = sourceId + "\u0000" + targetId;
+    if (edgeKeys[key]) return;
+    edgeKeys[key] = true;
+    edges.push([sourceId, targetId]);
+  }
+
+  function expandStructuredMetadata(data) {
+    var nodes = (data.nodes || []).map(function (node) {
+      var copy = {};
+      Object.keys(node || {}).forEach(function (key) {
+        copy[key] = node[key];
+      });
+      return copy;
+    });
+    var edges = [];
+    var usedIds = {};
+    var edgeKeys = {};
+    var generatedByKey = {};
+    var maxY = 720;
+
+    nodes.forEach(function (node) {
+      if (node.id) usedIds[node.id] = true;
+    });
+
+    (data.edges || []).forEach(function (edge) {
+      if (!Array.isArray(edge) || edge.length !== 2) return;
+      addEdge(edges, edgeKeys, edge[0], edge[1]);
+    });
+
+    function metadataNode(spec, label) {
+      var key = spec.type + "\u0000" + label;
+      if (generatedByKey[key]) return generatedByKey[key];
+      var node = {
+        id: uniqueNodeId(spec.idPrefix + "-" + slugify(label), usedIds),
+        type: spec.type,
+        label: label,
+        metadataField: spec.field,
+        generatedMetadata: true,
+        x: spec.x,
+        y: spec.yStart
+      };
+      generatedByKey[key] = node;
+      nodes.push(node);
+      return node;
+    }
+
+    nodes.filter(function (node) { return node.type === "paper"; }).forEach(function (paper, index) {
+      paper.x = 1090;
+      paper.y = 70 + index * 62;
+      maxY = Math.max(maxY, paper.y + 90);
+
+      metadataSpecs.forEach(function (spec) {
+        mapLabelsFor(paper, spec).forEach(function (label) {
+          var node = metadataNode(spec, label);
+          addEdge(edges, edgeKeys, paper.id, node.id);
+        });
+      });
+    });
+
+    metadataSpecs.forEach(function (spec) {
+      var group = nodes.filter(function (node) {
+        return node.generatedMetadata && node.type === spec.type;
+      }).sort(function (a, b) {
+        return a.label.localeCompare(b.label);
+      });
+      group.forEach(function (node, index) {
+        node.x = spec.x;
+        node.y = spec.yStart + index * spec.yStep;
+        maxY = Math.max(maxY, node.y + 60);
+      });
+    });
+
+    return {
+      nodes: nodes,
+      edges: edges,
+      canvasWidth: 1180,
+      canvasHeight: Math.max(1180, maxY)
+    };
   }
 
   function nodeAriaLabel(node) {
@@ -54,8 +317,11 @@
   }
 
   function buildIndexes(data) {
-    state.nodes = (data.nodes || []).slice();
-    state.edges = (data.edges || []).slice();
+    var expanded = expandStructuredMetadata(data);
+    state.nodes = expanded.nodes;
+    state.edges = expanded.edges;
+    state.canvasWidth = expanded.canvasWidth;
+    state.canvasHeight = expanded.canvasHeight;
     state.nodeById = {};
     state.adjacency = {};
 
@@ -126,13 +392,13 @@
 
   function edgePath(source, target) {
     var dx = target.x - source.x;
-    var c1x = source.x + dx * 0.48;
-    var c2x = target.x - dx * 0.48;
+    var c1x = source.x + dx * 0.45;
+    var c2x = target.x - dx * 0.45;
     return "M " + source.x + " " + source.y + " C " + c1x + " " + source.y + ", " + c2x + " " + target.y + ", " + target.x + " " + target.y;
   }
 
   function shapeForNode(node) {
-    if (node.type === "data") {
+    if (node.type === "data" || node.type === "data_source") {
       return svgEl("rect", {
         "class": "network-node-shape",
         "x": "-8",
@@ -143,14 +409,14 @@
       });
     }
 
-    if (node.type === "method") {
+    if (node.type === "empirical_object") {
       return svgEl("rect", {
         "class": "network-node-shape",
         "x": "-9",
-        "y": "-9",
+        "y": "-6",
         "width": "18",
-        "height": "18",
-        "rx": "4"
+        "height": "12",
+        "rx": "2"
       });
     }
 
@@ -164,19 +430,17 @@
     if (node.type === "paper") {
       return { x: "0", y: "-17", anchor: "middle" };
     }
-    if (node.x < 180) {
-      return { x: "14", y: "4", anchor: "start" };
-    }
-    if (node.x > 820) {
-      return { x: "-14", y: "4", anchor: "end" };
-    }
-    if (node.x < 500) {
+    if (node.type === "data_source") {
       return { x: "-14", y: "4", anchor: "end" };
     }
     return { x: "14", y: "4", anchor: "start" };
   }
 
   function renderNetwork() {
+    svg.setAttribute("viewBox", "0 0 " + state.canvasWidth + " " + state.canvasHeight);
+    svg.style.minWidth = "";
+    svg.style.minHeight = Math.round(state.canvasHeight * 0.84) + "px";
+
     Array.prototype.slice.call(svg.querySelectorAll("[data-network-layer]")).forEach(function (layer) {
       layer.remove();
     });
@@ -199,7 +463,7 @@
 
     state.nodes.forEach(function (node) {
       var group = svgEl("g", {
-        "class": "network-node network-node-" + node.type,
+        "class": "network-node network-node-" + typeClass(node.type),
         "data-node-id": node.id,
         "data-node-type": node.type,
         "transform": "translate(" + node.x + " " + node.y + ")",
@@ -260,10 +524,23 @@
     var list = el("ul", "network-chip-list");
     nodes.forEach(function (node) {
       var item = el("li");
-      item.appendChild(el("span", "network-chip network-chip-" + node.type, node.label));
+      item.appendChild(el("span", "network-chip network-chip-" + typeClass(node.type), node.label));
       list.appendChild(item);
     });
     parent.appendChild(list);
+  }
+
+  function renderLabelChips(parent, type, labels) {
+    renderChips(parent, labels.map(function (label) {
+      return { type: type, label: label };
+    }));
+  }
+
+  function renderMetadataGroup(node, spec) {
+    var labels = mapLabelsFor(node, spec);
+    if (!labels.length) return;
+    panel.appendChild(el("h4", null, spec.heading));
+    renderLabelChips(panel, spec.type, labels);
   }
 
   function renderPaperPanel(node) {
@@ -273,7 +550,8 @@
     [
       ["Year", node.year],
       ["Status", node.status],
-      ["Category", node.category]
+      ["Category", node.category],
+      ["Verification", node.needs_verification ? "Needs verification" : ""]
     ].forEach(function (pair) {
       if (!pair[1]) return;
       meta.appendChild(el("dt", null, pair[0]));
@@ -285,18 +563,9 @@
     panel.appendChild(summary);
     panel.appendChild(meta);
 
-    var linked = neighbors(node.id);
-    var topics = linked.filter(function (item) { return item.type === "topic"; });
-    var dataAndMethods = linked.filter(function (item) { return item.type === "data" || item.type === "method"; });
-
-    if (topics.length) {
-      panel.appendChild(el("h4", null, "Connected topics"));
-      renderChips(panel, topics);
-    }
-    if (dataAndMethods.length) {
-      panel.appendChild(el("h4", null, "Connected data and methods"));
-      renderChips(panel, dataAndMethods);
-    }
+    metadataSpecs.forEach(function (spec) {
+      renderMetadataGroup(node, spec);
+    });
 
     if (node.href) {
       var link = el("a", "network-detail-link", "Open on research page");
@@ -320,6 +589,7 @@
         link.href = paper.href || "/research/#" + paper.id;
         item.appendChild(link);
         if (paper.category) item.appendChild(document.createTextNode(" (" + paper.category + ")"));
+        if (paper.needs_verification) item.appendChild(document.createTextNode(" - needs verification"));
         list.appendChild(item);
       });
       panel.appendChild(list);

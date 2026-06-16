@@ -36,10 +36,11 @@ The checker verifies required pages and routes, starter strings, local internal 
 - `assets/css/style.css`: color tokens, layout, and component styles
 - `assets/js/main.js`: theme toggle and active navigation
 - `assets/js/research-network.js`: vanilla SVG Research Network behavior
-- `assets/data/research-network.json`: Research Network paper, topic, data, and method links
+- `assets/data/research-network.json`: Research Network paper metadata for topics, empirical objects, and data sources
 - `assets/img/data-mark-logo.svg`: header data-mark logo
 - `favicon.svg`: browser favicon
 - `assets/docs/michael-dalton-cv.pdf`: canonical local CV PDF
+- `assets/docs/michael-dalton-resume.pdf`: canonical local resume PDF
 - `assets/docs/cv.pdf`: compatibility copy for older links
 - `migration_content_inventory.md`: fetched current-site content inventory
 - `MIGRATION_REPORT.md`: migration summary and preserved links
