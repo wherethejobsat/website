@@ -20,28 +20,35 @@
       yStart: 70,
       yStep: 92,
       labels: [
+        "Employer",
+        "Household",
         "workforce development",
         "remote work / telework",
         "pandemic employment",
-        "employer size",
         "vacancies",
         "workplace injuries",
         "job search",
         "Paycheck Protection Program",
         "hiring decisions",
+        "Local labor markets",
         "family and household networks"
       ],
       aliases: {
         "skills gap": "workforce development",
-        "firm training": "workforce development",
+        "firm training": "Employer",
+        "business relocation": "Employer",
+        "employer size": "Employer",
+        "small businesses": "Employer",
         "remote work": "remote work / telework",
         "telework": "remote work / telework",
         "workplace adjustment": "remote work / telework",
         "pandemic work arrangements": "remote work / telework",
         "business closures": "pandemic employment",
         "pandemic recovery": "pandemic employment",
-        "local COVID shocks": "pandemic employment",
+        "local COVID shocks": "Local labor markets",
         "industry heterogeneity": "pandemic employment",
+        "local labor markets": "Local labor markets",
+        "housing costs": "Local labor markets",
         "online job postings": "vacancies",
         "labor-market measurement": "vacancies",
         "heat": "workplace injuries",
@@ -49,17 +56,16 @@
         "search behavior": "job search",
         "search frictions": "job search",
         "unemployment": "job search",
-        "small businesses": "Paycheck Protection Program",
         "pandemic policy": "Paycheck Protection Program",
         "behavioral labor economics": "hiring decisions",
         "salience": "hiring decisions",
+        "household finance": "Household",
+        "household resources": "Household",
         "health shocks": "family and household networks",
         "family networks": "family and household networks",
         "informal insurance": "family and household networks",
-        "household finance": "family and household networks",
         "informal family insurance": "family and household networks",
         "family decision making": "family and household networks",
-        "household resources": "family and household networks",
         "family transfers": "family and household networks"
       }
     },
@@ -230,7 +236,7 @@
     }
 
     nodes.filter(function (node) { return node.type === "paper"; }).forEach(function (paper, index) {
-      paper.x = 1090;
+      paper.x = 1010;
       paper.y = 70 + index * 62;
       maxY = Math.max(maxY, paper.y + 90);
 
@@ -243,9 +249,18 @@
     });
 
     metadataSpecs.forEach(function (spec) {
+      var labelRank = {};
+      spec.labels.forEach(function (label, index) {
+        labelRank[label] = index;
+      });
       var group = nodes.filter(function (node) {
         return node.generatedMetadata && node.type === spec.type;
       }).sort(function (a, b) {
+        var rankA = labelRank[a.label];
+        var rankB = labelRank[b.label];
+        if (rankA !== undefined && rankB !== undefined && rankA !== rankB) return rankA - rankB;
+        if (rankA !== undefined) return -1;
+        if (rankB !== undefined) return 1;
         return a.label.localeCompare(b.label);
       });
       group.forEach(function (node, index) {
@@ -371,12 +386,12 @@
 
   function labelAttrs(node) {
     if (node.type === "paper") {
-      return { x: "0", y: "-17", anchor: "middle" };
+      return { x: "0", y: "-27", anchor: "middle" };
     }
     if (node.type === "data_source") {
-      return { x: "-14", y: "4", anchor: "end" };
+      return { x: "-23", y: "7", anchor: "end" };
     }
-    return { x: "14", y: "4", anchor: "start" };
+    return { x: "23", y: "7", anchor: "start" };
   }
 
   function renderNetwork() {

@@ -154,7 +154,9 @@
       "topics": [
         "vacancies",
         "online job postings",
-        "labor-market measurement"
+        "labor-market measurement",
+        "Employer",
+        "Local labor markets"
       ],
       "data_sources": [
         "online job postings",
@@ -196,7 +198,8 @@
       "topics": [
         "heat",
         "workplace injuries",
-        "occupational safety"
+        "occupational safety",
+        "Employer"
       ],
       "data_sources": [
         "heat exposure data",
@@ -233,7 +236,8 @@
       "topics": [
         "job search",
         "unemployment",
-        "search behavior"
+        "search behavior",
+        "Employer"
       ],
       "data_sources": [
         "CPS"
@@ -321,7 +325,8 @@
       "topics": [
         "pandemic recovery",
         "low-wage employment",
-        "worker inequality"
+        "worker inequality",
+        "Household"
       ],
       "data_sources": [
         "CES microdata",
@@ -367,7 +372,8 @@
       "topics": [
         "behavioral labor economics",
         "hiring decisions",
-        "salience"
+        "salience",
+        "Employer"
       ],
       "data_sources": [
         "NBA player transactions",
@@ -502,7 +508,8 @@
       "topics": [
         "telework",
         "workplace adjustment",
-        "pandemic work arrangements"
+        "pandemic work arrangements",
+        "Employer"
       ],
       "data_sources": [
         "Business Response Survey",
@@ -590,7 +597,8 @@
       "topics": [
         "job search",
         "unemployment",
-        "search frictions"
+        "search frictions",
+        "Household"
       ],
       "data_sources": [
         "2018 CPS job-search supplement"
@@ -633,7 +641,8 @@
       "topics": [
         "local COVID shocks",
         "pandemic employment",
-        "industry heterogeneity"
+        "industry heterogeneity",
+        "Employer"
       ],
       "data_sources": [
         "CES microdata",
@@ -684,7 +693,8 @@
       "y": 970,
       "topics": [
         "informal family insurance",
-        "family networks"
+        "family networks",
+        "Household"
       ],
       "data_sources": [
         "PSID"
@@ -750,7 +760,8 @@
       "topics": [
         "unemployment",
         "family transfers",
-        "informal insurance"
+        "informal insurance",
+        "Household"
       ],
       "data_sources": [
         "PSID"

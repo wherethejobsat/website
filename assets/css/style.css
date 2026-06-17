@@ -415,6 +415,40 @@ html[data-theme="dark"] .site-header {
   margin-top: 20px;
 }
 
+.hero-actions {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.hero-action-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hero-action-group-primary {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-action-group-primary .btn {
+  min-height: 46px;
+  padding: 10px 15px;
+}
+
+.hero-action-group-secondary {
+  gap: 8px;
+}
+
+.hero-action-group-secondary .btn {
+  min-height: 36px;
+  padding: 7px 11px;
+  background: var(--surface-2);
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -843,13 +877,13 @@ details p {
 }
 
 .network-filter-button {
-  min-height: 34px;
-  padding: 6px 10px;
+  min-height: 38px;
+  padding: 7px 12px;
   border: 1px solid var(--border);
   border-radius: 999px;
   background: var(--surface);
   color: var(--muted);
-  font: 700 0.82rem/1.2 var(--font-sans);
+  font: 700 1rem/1.2 var(--font-sans);
   cursor: pointer;
 }
 
@@ -871,7 +905,7 @@ details p {
   margin: -4px 0 14px;
   color: var(--muted);
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 1rem;
 }
 
 .network-legend-item {
@@ -985,16 +1019,16 @@ details p {
 .network-node-label {
   fill: var(--text);
   stroke: var(--surface);
-  stroke-width: 4px;
+  stroke-width: 5px;
   paint-order: stroke;
-  font-size: 12px;
+  font-size: 19px;
   font-weight: 800;
   letter-spacing: 0;
   pointer-events: none;
 }
 
 .network-node-paper .network-node-label {
-  font-size: 13px;
+  font-size: 20px;
 }
 
 .network-node.is-selected .network-node-shape,
@@ -1020,13 +1054,14 @@ details p {
 .network-panel {
   min-height: 520px;
   padding: 16px;
+  font-size: 1.04rem;
 }
 
 .network-selection-summary {
   margin: 0 0 10px;
   color: var(--primary);
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.96rem;
   font-weight: 800;
 }
 
@@ -1034,7 +1069,7 @@ details p {
   margin: 0 0 6px;
   color: var(--accent);
   font-family: var(--font-mono);
-  font-size: 0.76rem;
+  font-size: 0.94rem;
   font-weight: 800;
   text-transform: uppercase;
 }
@@ -1042,14 +1077,14 @@ details p {
 .network-panel h3 {
   margin: 0;
   font-family: var(--font-serif);
-  font-size: 1.3rem;
+  font-size: 1.58rem;
   line-height: 1.2;
 }
 
 .network-panel h4 {
   margin: 14px 0 7px;
   color: var(--text);
-  font-size: 0.9rem;
+  font-size: 1.08rem;
   text-transform: uppercase;
 }
 
@@ -1063,7 +1098,7 @@ details p {
 
 .network-meta {
   display: grid;
-  grid-template-columns: 78px 1fr;
+  grid-template-columns: 92px 1fr;
   gap: 4px 8px;
   margin: 12px 0 0;
   padding: 10px;
@@ -1075,7 +1110,7 @@ details p {
 .network-meta dt {
   color: var(--muted);
   font-family: var(--font-mono);
-  font-size: 0.76rem;
+  font-size: 0.94rem;
 }
 
 .network-meta dd {
@@ -1102,14 +1137,14 @@ details p {
 .network-chip {
   display: inline-flex;
   align-items: center;
-  min-height: 28px;
-  padding: 4px 8px;
+  min-height: 32px;
+  padding: 5px 9px;
   border: 1px solid var(--border);
   border-radius: 999px;
   color: var(--muted);
   background: var(--surface);
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.96rem;
 }
 
 .network-chip-data,
@@ -1126,10 +1161,10 @@ details p {
 .network-detail-link {
   display: inline-flex;
   width: fit-content;
-  min-height: 36px;
+  min-height: 40px;
   align-items: center;
   margin-top: 16px;
-  padding: 7px 10px;
+  padding: 8px 12px;
   border: 1px solid var(--border);
   border-radius: 999px;
   color: var(--primary);
@@ -1145,12 +1180,13 @@ details p {
   margin-top: 14px;
   padding: 14px;
   background: var(--surface-2);
+  font-size: 1.06rem;
 }
 
 .network-fallback h3 {
   margin: 0 0 4px;
   font-family: var(--font-serif);
-  font-size: 1.02rem;
+  font-size: 1.25rem;
 }
 
 .network-fallback p {
@@ -1167,7 +1203,7 @@ details p {
 .network-fallback h4 {
   margin: 4px 0 6px;
   color: var(--text);
-  font-size: 0.9rem;
+  font-size: 1.08rem;
   text-transform: uppercase;
 }
 
@@ -1397,9 +1433,9 @@ hr {
   }
 
   .network-filter-button {
-    min-height: 32px;
-    padding: 5px 8px;
-    font-size: 0.78rem;
+    min-height: 34px;
+    padding: 6px 9px;
+    font-size: 0.92rem;
   }
 
   .network-canvas {
