@@ -62,7 +62,7 @@
         "housing costs"
       ],
       "data_sources": [
-        "2021 BRS",
+        "Business Response Survey",
         "OEWS",
         "QCEW",
         "ACS",
@@ -278,7 +278,7 @@
         "QCEW wage records",
         "CES",
         "OEWS",
-        "BRS"
+        "Business Response Survey"
       ],
       "data_type": [
         "administrative records",
@@ -326,8 +326,7 @@
       "data_sources": [
         "CES microdata",
         "CPS microdata",
-        "QCEW wage baseline",
-        "BRS"
+        "QCEW wage baseline"
       ],
       "data_type": [
         "establishment survey",
@@ -506,7 +505,7 @@
         "pandemic work arrangements"
       ],
       "data_sources": [
-        "2021 BRS",
+        "Business Response Survey",
         "QCEW sampling frame"
       ],
       "data_type": [

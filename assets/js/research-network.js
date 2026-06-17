@@ -64,66 +64,18 @@
       }
     },
     {
-      field: "empirical_objects",
-      type: "empirical_object",
-      heading: "Empirical objects",
-      idPrefix: "object",
-      x: 410,
-      yStart: 70,
-      yStep: 92,
-      labels: [
-        "establishment",
-        "firm",
-        "industry",
-        "worker",
-        "household",
-        "family network",
-        "job posting/vacancy",
-        "local geography",
-        "jobseeker/search event",
-        "player/team"
-      ],
-      aliases: {
-        "employer": "firm",
-        "EIN": "firm",
-        "loan recipient": "firm",
-        "job": "worker",
-        "individual": "household",
-        "noncoresident family member": "family network",
-        "job posting": "job posting/vacancy",
-        "vacancy": "job posting/vacancy",
-        "labor-market cell": "job posting/vacancy",
-        "local labor market": "local geography",
-        "ZIP code": "local geography",
-        "Census tract": "local geography",
-        "housing market": "local geography",
-        "county": "local geography",
-        "MSA": "local geography",
-        "unemployed jobseeker": "jobseeker/search event",
-        "unemployment spell": "jobseeker/search event",
-        "application": "jobseeker/search event",
-        "interview": "jobseeker/search event",
-        "job offer": "jobseeker/search event",
-        "unemployed worker": "jobseeker/search event",
-        "player": "player/team",
-        "team": "player/team",
-        "hiring match": "player/team",
-        "family": "family network"
-      }
-    },
-    {
       field: "data_sources",
       type: "data_source",
       heading: "Data sources",
       idPrefix: "data-source",
-      x: 760,
+      x: 620,
       yStart: 70,
       yStep: 92,
       labels: [
         "QCEW",
         "CES",
         "CPS",
-        "BRS",
+        "Business Response Survey",
         "PSID",
         "JOLTS",
         "SOII",
@@ -140,7 +92,10 @@
         "CES microdata": "CES",
         "CPS microdata": "CPS",
         "2018 CPS job-search supplement": "CPS",
-        "2021 BRS": "BRS"
+        "BRS": "Business Response Survey",
+        "2021 BRS": "Business Response Survey",
+        "Vacancy Survey Data": "JOLTS",
+        "vacancy survey data": "JOLTS"
       }
     }
   ];
@@ -181,7 +136,6 @@
 
   function formatType(type) {
     if (type === "data" || type === "data_source") return "Data source";
-    if (type === "empirical_object") return "Empirical object";
     if (type === "topic") return "Topic";
     return "Paper";
   }
@@ -406,17 +360,6 @@
         "width": "16",
         "height": "16",
         "transform": "rotate(45)"
-      });
-    }
-
-    if (node.type === "empirical_object") {
-      return svgEl("rect", {
-        "class": "network-node-shape",
-        "x": "-9",
-        "y": "-6",
-        "width": "18",
-        "height": "12",
-        "rx": "2"
       });
     }
 

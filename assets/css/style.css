@@ -904,12 +904,6 @@ details p {
   transform: rotate(45deg);
 }
 
-.network-legend-object {
-  height: 8px;
-  border-color: var(--primary);
-  background: var(--surface-2);
-}
-
 .network-shell {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(260px, 0.38fr);
@@ -986,11 +980,6 @@ details p {
 .network-node-data-source .network-node-shape {
   fill: var(--accent);
   stroke: var(--surface);
-}
-
-.network-node-empirical-object .network-node-shape {
-  fill: var(--surface-2);
-  stroke: var(--primary);
 }
 
 .network-node-label {
