@@ -1,69 +1,66 @@
-# Michael Dalton academic website
+# Michael Dalton — Academic Website
 
-Static academic website for `michaeldaltoneconomics.org`, maintained as a dependency-light HTML/CSS/JS site.
+[![Validate site](https://github.com/wherethejobsat/website/actions/workflows/validate.yml/badge.svg)](https://github.com/wherethejobsat/website/actions/workflows/validate.yml)
+
+This repository contains the source for:
+
+https://michaeldaltoneconomics.org
+
+It is a dependency-light static academic website.
+
+## Site architecture
+
+- Vanilla HTML, CSS, and JavaScript.
+- No build step.
+- No third-party frontend dependencies.
+- Deployment directly from the repository root.
+- Dependency-free Python standard-library validation.
 
 ## Local preview
-
-Run from the repository root:
 
 ```sh
 python3 -m http.server 8000
 ```
 
-Then open:
+Main local routes:
 
 - `http://localhost:8000/`
 - `http://localhost:8000/research/`
 - `http://localhost:8000/research-map/`
 - `http://localhost:8000/cv/`
+- `http://localhost:8000/contact/`
 
-## Validate
+## Validation
 
 ```sh
 python3 tools/check_site.py
 ```
 
-The checker verifies required pages and routes, starter strings, local internal links and anchors, canonical metadata, sitemap domain, `CNAME`, local CV PDF paths, the Research Network JSON contract, and the required `Zombie Papers` section heading.
+The checker validates required files and routes, metadata, internal links and anchors, document compatibility, sitemap and CNAME values, and the Research Map data contract.
 
-## File structure
+## Repository structure
 
-- `index.html`: home page
-- `research/index.html`: canonical `/research/` page
-- `research-map/index.html`: canonical `/research-map/` page with the interactive Research Map
-- `cv/index.html`: canonical `/cv/` page
-- `contact/index.html`: static contact page with no form dependency
-- `research.html`, `cv.html`, `contact.html`: redirect/canonical helper stubs
-- `assets/css/style.css`: color tokens, layout, and component styles
-- `assets/js/main.js`: theme toggle and active navigation
-- `assets/js/research-network.js`: vanilla SVG Research Network behavior
-- `assets/data/research-network.json`: Research Network paper metadata for topics, empirical objects, and data sources
-- `assets/img/data-mark-logo.svg`: header data-mark logo
-- `favicon.svg`: browser favicon
-- `assets/docs/michael-dalton-cv.pdf`: canonical local CV PDF
-- `assets/docs/michael-dalton-resume.pdf`: canonical local resume PDF
-- `assets/docs/cv.pdf`: compatibility copy for older links
-- `migration_content_inventory.md`: fetched current-site content inventory
-- `MIGRATION_REPORT.md`: migration summary and preserved links
-- `DEPLOYMENT.md`: GitHub Pages and Cloudflare Pages launch runbook
+- Canonical page directories: `/`, `research/`, `research-map/`, `cv/`, and `contact/`.
+- Compatibility redirect files: `research.html`, `cv.html`, and `contact.html`.
+- `assets/css/`: site styling.
+- `assets/js/`: theme toggle, navigation state, and Research Map behavior.
+- `assets/data/`: local Research Map data.
+- `assets/img/`: local image and icon assets.
+- `assets/docs/`: local CV and resume PDFs.
+- `tools/check_site.py`: dependency-free validation.
+- `docs/DEPLOYMENT.md`: GitHub Pages deployment runbook.
 
-## Editing
+## Content maintenance
 
-- Keep the site static: no CMS, database, paid form service, analytics tracker, or server runtime.
-- Preserve public routes `/`, `/research`, and `/cv`.
-- Keep the research heading `Zombie Papers` exactly as written.
-- Keep Palette A and the data-mark logo in `assets/css/style.css`, `assets/img/data-mark-logo.svg`, and `favicon.svg`.
-- Edit research cards directly in `research/index.html`; preserve titles, coauthors, abstracts, publication status, and outbound links.
-- Edit Research Map data in `assets/data/research-network.json`; keep paper `href` values synchronized with IDs in `research/index.html`.
-- Edit Research Map behavior in `assets/js/research-network.js`; keep it dependency-free vanilla JavaScript and SVG.
-- Keep CV links local. Do not hotlink the legacy GoDaddy PDF.
-- When adding a page, update `sitemap.xml`, canonical URLs, navigation if needed, and `tools/check_site.py` if the page becomes required.
-- Use the obfuscated email display `Dalton.Michael at BLS dot gov` in HTML unless Michael explicitly wants a mailto link.
+Maintainers must preserve:
 
-## Launch checklist
+- The canonical routes.
+- The exact `Zombie Papers` heading.
+- Local CV and resume links.
+- The obfuscated email display `Dalton.Michael at BLS dot gov`.
+- The BLS disclaimer.
+- Synchronization between Research Map paper links and research-page anchor IDs.
 
-1. Run `python3 tools/check_site.py`.
-2. Preview with `python3 -m http.server 8000`.
-3. Confirm `/`, `/research/`, `/research-map/`, and `/cv/` load locally.
-4. Confirm `assets/docs/michael-dalton-cv.pdf` downloads locally.
-5. Deploy through GitHub Pages or Cloudflare Pages using `DEPLOYMENT.md`.
-6. Do not cancel or delete the old GoDaddy site until the custom domain resolves to the new host and HTTPS works.
+## Deployment
+
+See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md).
