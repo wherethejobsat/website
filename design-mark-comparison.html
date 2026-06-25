@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Local comparison page for data mark SVG candidates.">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="canonical" href="https://michaeldaltoneconomics.org/design-mark-comparison.html">
+  <title>Mark Comparison | Michael Dalton</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <script defer src="/assets/js/main.js"></script>
+  <style>
+    .mark-comparison {
+      display: grid;
+      gap: 22px;
+      margin-top: 22px;
+    }
+
+    .mark-candidate {
+      display: grid;
+      gap: 16px;
+    }
+
+    .mark-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .mark-preview-set {
+      display: grid;
+      gap: 12px;
+      align-content: start;
+    }
+
+    .mark-preview-set h3 {
+      margin: 0;
+      color: var(--muted);
+      font: 800 0.78rem/1.4 var(--font-mono);
+      text-transform: uppercase;
+    }
+
+    .mark-sizes {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      gap: 12px;
+    }
+
+    .mark-sample {
+      display: grid;
+      gap: 6px;
+      justify-items: center;
+      color: var(--muted);
+      font: 700 0.76rem/1.2 var(--font-mono);
+    }
+
+    .mark-frame {
+      --size: 48px;
+      display: grid;
+      place-items: center;
+      min-width: max(56px, var(--size));
+      min-height: max(56px, var(--size));
+      border: 1px solid var(--border);
+      background:
+        linear-gradient(90deg, rgba(31, 78, 121, 0.035) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(180, 83, 9, 0.03) 1px, transparent 1px),
+        var(--bg);
+      background-size: 72px 72px, 72px 72px, auto;
+    }
+
+    .mark-frame.dark {
+      background: #111722;
+      border-color: #334155;
+    }
+
+    .mark-img,
+    .mark-mask {
+      display: block;
+      width: var(--size);
+      height: var(--size);
+    }
+
+    .mark-mask {
+      background: #172033;
+      -webkit-mask: var(--mark) center / contain no-repeat;
+      mask: var(--mark) center / contain no-repeat;
+    }
+
+    @media (max-width: 920px) {
+      .mark-preview-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <a class="brand-link" href="/" aria-label="Michael Dalton home">
+        <img class="brand-mark" src="/assets/img/data-mark-logo.svg" alt="" aria-hidden="true">
+        <span class="brand-text">Michael Dalton</span>
+      </a>
+      <span class="subtitle">Labor economics and public data</span>
+    </div>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="/research/">Research</a>
+      <a href="/cv/">CV</a>
+      <a class="cta" href="/contact/">Contact</a>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle color theme"><span class="theme-glyph" aria-hidden="true"></span></button>
+    </nav>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <section class="hero" aria-label="Page header">
+    <div class="hero-inner">
+      <h1>Mark Comparison</h1>
+    </div>
+  </section>
+
+  <div class="mark-comparison">
+    <section class="content-block mark-candidate" aria-labelledby="linked-records-heading">
+      <div class="section-title stacked">
+        <h2 id="linked-records-heading">Linked Records</h2>
+      </div>
+      <div class="mark-preview-grid">
+        <section class="mark-preview-set" aria-label="Linked Records normal">
+          <h3>Normal</h3>
+          <div class="mark-sizes">
+            <div class="mark-sample"><span class="mark-frame" style="--size: 256px"><img class="mark-img" src="/assets/img/data-mark-linked-records.svg" width="256" height="256" alt="Linked Records mark at 256 pixels"></span><span>256</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 96px"><img class="mark-img" src="/assets/img/data-mark-linked-records.svg" width="96" height="96" alt="Linked Records mark at 96 pixels"></span><span>96</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 48px"><img class="mark-img" src="/assets/img/data-mark-linked-records.svg" width="48" height="48" alt="Linked Records mark at 48 pixels"></span><span>48</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 32px"><img class="mark-img" src="/assets/img/data-mark-linked-records.svg" width="32" height="32" alt="Linked Records mark at 32 pixels"></span><span>32</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 24px"><img class="mark-img" src="/assets/img/data-mark-linked-records.svg" width="24" height="24" alt="Linked Records mark at 24 pixels"></span><span>24</span></div>
+          </div>
+        </section>
+        <section class="mark-preview-set" aria-label="Linked Records one color">
+          <h3>One-color</h3>
+          <div class="mark-sizes">
+            <div class="mark-sample"><span class="mark-frame" style="--size: 256px"><span class="mark-mask" style="--mark: url('/assets/img/data-mark-linked-records.svg')" aria-label="Linked Records one-color mark at 256 pixels" role="img"></span></span><span>256</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 96px"><span class="mark-mask" style="--mark: url('/assets/img/data-mark-linked-records.svg')" aria-label="Linked Records one-color mark at 96 pixels" role="img"></span></span><span>96</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 48px"><span class="mark-mask" style="--mark: url('/assets/img/data-mark-linked-records.svg')" aria-label="Linked Records one-color mark at 48 pixels" role="img"></span></span><span>48</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 32px"><span class="mark-mask" style="--mark: url('/assets/img/data-mark-linked-records.svg')" aria-label="Linked Records one-color mark at 32 pixels" role="img"></span></span><span>32</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 24px"><span class="mark-mask" style="--mark: url('/assets/img/data-mark-linked-records.svg')" aria-label="Linked Records one-color mark at 24 pixels" role="img"></span></span><span>24</span></div>
+          </div>
+        </section>
+        <section class="mark-preview-set" aria-label="Linked Records dark background">
+          <h3>Dark background</h3>
+          <div class="mark-sizes">
+            <div class="mark-sample"><span class="mark-frame dark" style="--size: 256px"><img class="mark-img" src="/assets/img/data-mark-linked-records.svg" width="256" height="256" alt="Linked Records mark on dark background at 256 pixels"></span><span>256</span></div>
+            <div class="mark-sample"><span class="mark-frame dark" style="--size: 96px"><img class="mark-img" src="/assets/img/data-mark-linked-records.svg" width="96" height="96" alt="Linked Records mark on dark background at 96 pixels"></span><span>96</span></div>
+            <div class="mark-sample"><span class="mark-frame dark" style="--size: 48px"><img class="mark-img" src="/assets/img/data-mark-linked-records.svg" width="48" height="48" alt="Linked Records mark on dark background at 48 pixels"></span><span>48</span></div>
+            <div class="mark-sample"><span class="mark-frame dark" style="--size: 32px"><img class="mark-img" src="/assets/img/data-mark-linked-records.svg" width="32" height="32" alt="Linked Records mark on dark background at 32 pixels"></span><span>32</span></div>
+            <div class="mark-sample"><span class="mark-frame dark" style="--size: 24px"><img class="mark-img" src="/assets/img/data-mark-linked-records.svg" width="24" height="24" alt="Linked Records mark on dark background at 24 pixels"></span><span>24</span></div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="content-block mark-candidate" aria-labelledby="panel-flow-heading">
+      <div class="section-title stacked">
+        <h2 id="panel-flow-heading">Establishment Panel Flow</h2>
+      </div>
+      <div class="mark-preview-grid">
+        <section class="mark-preview-set" aria-label="Establishment Panel Flow normal">
+          <h3>Normal</h3>
+          <div class="mark-sizes">
+            <div class="mark-sample"><span class="mark-frame" style="--size: 256px"><img class="mark-img" src="/assets/img/archive/20260624__mark_candidates/data-mark-panel-flow.svg" width="256" height="256" alt="Establishment Panel Flow mark at 256 pixels"></span><span>256</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 96px"><img class="mark-img" src="/assets/img/archive/20260624__mark_candidates/data-mark-panel-flow.svg" width="96" height="96" alt="Establishment Panel Flow mark at 96 pixels"></span><span>96</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 48px"><img class="mark-img" src="/assets/img/archive/20260624__mark_candidates/data-mark-panel-flow.svg" width="48" height="48" alt="Establishment Panel Flow mark at 48 pixels"></span><span>48</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 32px"><img class="mark-img" src="/assets/img/archive/20260624__mark_candidates/data-mark-panel-flow.svg" width="32" height="32" alt="Establishment Panel Flow mark at 32 pixels"></span><span>32</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 24px"><img class="mark-img" src="/assets/img/archive/20260624__mark_candidates/data-mark-panel-flow.svg" width="24" height="24" alt="Establishment Panel Flow mark at 24 pixels"></span><span>24</span></div>
+          </div>
+        </section>
+        <section class="mark-preview-set" aria-label="Establishment Panel Flow one color">
+          <h3>One-color</h3>
+          <div class="mark-sizes">
+            <div class="mark-sample"><span class="mark-frame" style="--size: 256px"><span class="mark-mask" style="--mark: url('/assets/img/archive/20260624__mark_candidates/data-mark-panel-flow.svg')" aria-label="Establishment Panel Flow one-color mark at 256 pixels" role="img"></span></span><span>256</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 96px"><span class="mark-mask" style="--mark: url('/assets/img/archive/20260624__mark_candidates/data-mark-panel-flow.svg')" aria-label="Establishment Panel Flow one-color mark at 96 pixels" role="img"></span></span><span>96</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 48px"><span class="mark-mask" style="--mark: url('/assets/img/archive/20260624__mark_candidates/data-mark-panel-flow.svg')" aria-label="Establishment Panel Flow one-color mark at 48 pixels" role="img"></span></span><span>48</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 32px"><span class="mark-mask" style="--mark: url('/assets/img/archive/20260624__mark_candidates/data-mark-panel-flow.svg')" aria-label="Establishment Panel Flow one-color mark at 32 pixels" role="img"></span></span><span>32</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 24px"><span class="mark-mask" style="--mark: url('/assets/img/archive/20260624__mark_candidates/data-mark-panel-flow.svg')" aria-label="Establishment Panel Flow one-color mark at 24 pixels" role="img"></span></span><span>24</span></div>
+          </div>
+        </section>
+        <section class="mark-preview-set" aria-label="Establishment Panel Flow dark background">
+          <h3>Dark background</h3>
+          <div class="mark-sizes">
+            <div class="mark-sample"><span class="mark-frame dark" style="--size: 256px"><img class="mark-img" src="/assets/img/archive/20260624__mark_candidates/data-mark-panel-flow.svg" width="256" height="256" alt="Establishment Panel Flow mark on dark background at 256 pixels"></span><span>256</span></div>
+            <div class="mark-sample"><span class="mark-frame dark" style="--size: 96px"><img class="mark-img" src="/assets/img/archive/20260624__mark_candidates/data-mark-panel-flow.svg" width="96" height="96" alt="Establishment Panel Flow mark on dark background at 96 pixels"></span><span>96</span></div>
+            <div class="mark-sample"><span class="mark-frame dark" style="--size: 48px"><img class="mark-img" src="/assets/img/archive/20260624__mark_candidates/data-mark-panel-flow.svg" width="48" height="48" alt="Establishment Panel Flow mark on dark background at 48 pixels"></span><span>48</span></div>
+            <div class="mark-sample"><span class="mark-frame dark" style="--size: 32px"><img class="mark-img" src="/assets/img/archive/20260624__mark_candidates/data-mark-panel-flow.svg" width="32" height="32" alt="Establishment Panel Flow mark on dark background at 32 pixels"></span><span>32</span></div>
+            <div class="mark-sample"><span class="mark-frame dark" style="--size: 24px"><img class="mark-img" src="/assets/img/archive/20260624__mark_candidates/data-mark-panel-flow.svg" width="24" height="24" alt="Establishment Panel Flow mark on dark background at 24 pixels"></span><span>24</span></div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="content-block mark-candidate" aria-labelledby="research-network-heading">
+      <div class="section-title stacked">
+        <h2 id="research-network-heading">Research Network</h2>
+      </div>
+      <div class="mark-preview-grid">
+        <section class="mark-preview-set" aria-label="Research Network normal">
+          <h3>Normal</h3>
+          <div class="mark-sizes">
+            <div class="mark-sample"><span class="mark-frame" style="--size: 256px"><img class="mark-img" src="/assets/img/archive/20260624__mark_candidates/data-mark-research-network.svg" width="256" height="256" alt="Research Network mark at 256 pixels"></span><span>256</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 96px"><img class="mark-img" src="/assets/img/archive/20260624__mark_candidates/data-mark-research-network.svg" width="96" height="96" alt="Research Network mark at 96 pixels"></span><span>96</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 48px"><img class="mark-img" src="/assets/img/archive/20260624__mark_candidates/data-mark-research-network.svg" width="48" height="48" alt="Research Network mark at 48 pixels"></span><span>48</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 32px"><img class="mark-img" src="/assets/img/archive/20260624__mark_candidates/data-mark-research-network.svg" width="32" height="32" alt="Research Network mark at 32 pixels"></span><span>32</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 24px"><img class="mark-img" src="/assets/img/archive/20260624__mark_candidates/data-mark-research-network.svg" width="24" height="24" alt="Research Network mark at 24 pixels"></span><span>24</span></div>
+          </div>
+        </section>
+        <section class="mark-preview-set" aria-label="Research Network one color">
+          <h3>One-color</h3>
+          <div class="mark-sizes">
+            <div class="mark-sample"><span class="mark-frame" style="--size: 256px"><span class="mark-mask" style="--mark: url('/assets/img/archive/20260624__mark_candidates/data-mark-research-network.svg')" aria-label="Research Network one-color mark at 256 pixels" role="img"></span></span><span>256</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 96px"><span class="mark-mask" style="--mark: url('/assets/img/archive/20260624__mark_candidates/data-mark-research-network.svg')" aria-label="Research Network one-color mark at 96 pixels" role="img"></span></span><span>96</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 48px"><span class="mark-mask" style="--mark: url('/assets/img/archive/20260624__mark_candidates/data-mark-research-network.svg')" aria-label="Research Network one-color mark at 48 pixels" role="img"></span></span><span>48</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 32px"><span class="mark-mask" style="--mark: url('/assets/img/archive/20260624__mark_candidates/data-mark-research-network.svg')" aria-label="Research Network one-color mark at 32 pixels" role="img"></span></span><span>32</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 24px"><span class="mark-mask" style="--mark: url('/assets/img/archive/20260624__mark_candidates/data-mark-research-network.svg')" aria-label="Research Network one-color mark at 24 pixels" role="img"></span></span><span>24</span></div>
+          </div>
+        </section>
+        <section class="mark-preview-set" aria-label="Research Network dark background">
+          <h3>Dark background</h3>
+          <div class="mark-sizes">
+            <div class="mark-sample"><span class="mark-frame dark" style="--size: 256px"><img class="mark-img" src="/assets/img/archive/20260624__mark_candidates/data-mark-research-network.svg" width="256" height="256" alt="Research Network mark on dark background at 256 pixels"></span><span>256</span></div>
+            <div class="mark-sample"><span class="mark-frame dark" style="--size: 96px"><img class="mark-img" src="/assets/img/archive/20260624__mark_candidates/data-mark-research-network.svg" width="96" height="96" alt="Research Network mark on dark background at 96 pixels"></span><span>96</span></div>
+            <div class="mark-sample"><span class="mark-frame dark" style="--size: 48px"><img class="mark-img" src="/assets/img/archive/20260624__mark_candidates/data-mark-research-network.svg" width="48" height="48" alt="Research Network mark on dark background at 48 pixels"></span><span>48</span></div>
+            <div class="mark-sample"><span class="mark-frame dark" style="--size: 32px"><img class="mark-img" src="/assets/img/archive/20260624__mark_candidates/data-mark-research-network.svg" width="32" height="32" alt="Research Network mark on dark background at 32 pixels"></span><span>32</span></div>
+            <div class="mark-sample"><span class="mark-frame dark" style="--size: 24px"><img class="mark-img" src="/assets/img/archive/20260624__mark_candidates/data-mark-research-network.svg" width="24" height="24" alt="Research Network mark on dark background at 24 pixels"></span><span>24</span></div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="content-block mark-candidate" aria-labelledby="matched-sample-heading">
+      <div class="section-title stacked">
+        <h2 id="matched-sample-heading">Matched Sample</h2>
+      </div>
+      <div class="mark-preview-grid">
+        <section class="mark-preview-set" aria-label="Matched Sample normal">
+          <h3>Normal</h3>
+          <div class="mark-sizes">
+            <div class="mark-sample"><span class="mark-frame" style="--size: 256px"><img class="mark-img" src="/assets/img/archive/20260624__mark_candidates/data-mark-matched-sample.svg" width="256" height="256" alt="Matched Sample mark at 256 pixels"></span><span>256</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 96px"><img class="mark-img" src="/assets/img/archive/20260624__mark_candidates/data-mark-matched-sample.svg" width="96" height="96" alt="Matched Sample mark at 96 pixels"></span><span>96</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 48px"><img class="mark-img" src="/assets/img/archive/20260624__mark_candidates/data-mark-matched-sample.svg" width="48" height="48" alt="Matched Sample mark at 48 pixels"></span><span>48</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 32px"><img class="mark-img" src="/assets/img/archive/20260624__mark_candidates/data-mark-matched-sample.svg" width="32" height="32" alt="Matched Sample mark at 32 pixels"></span><span>32</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 24px"><img class="mark-img" src="/assets/img/archive/20260624__mark_candidates/data-mark-matched-sample.svg" width="24" height="24" alt="Matched Sample mark at 24 pixels"></span><span>24</span></div>
+          </div>
+        </section>
+        <section class="mark-preview-set" aria-label="Matched Sample one color">
+          <h3>One-color</h3>
+          <div class="mark-sizes">
+            <div class="mark-sample"><span class="mark-frame" style="--size: 256px"><span class="mark-mask" style="--mark: url('/assets/img/archive/20260624__mark_candidates/data-mark-matched-sample.svg')" aria-label="Matched Sample one-color mark at 256 pixels" role="img"></span></span><span>256</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 96px"><span class="mark-mask" style="--mark: url('/assets/img/archive/20260624__mark_candidates/data-mark-matched-sample.svg')" aria-label="Matched Sample one-color mark at 96 pixels" role="img"></span></span><span>96</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 48px"><span class="mark-mask" style="--mark: url('/assets/img/archive/20260624__mark_candidates/data-mark-matched-sample.svg')" aria-label="Matched Sample one-color mark at 48 pixels" role="img"></span></span><span>48</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 32px"><span class="mark-mask" style="--mark: url('/assets/img/archive/20260624__mark_candidates/data-mark-matched-sample.svg')" aria-label="Matched Sample one-color mark at 32 pixels" role="img"></span></span><span>32</span></div>
+            <div class="mark-sample"><span class="mark-frame" style="--size: 24px"><span class="mark-mask" style="--mark: url('/assets/img/archive/20260624__mark_candidates/data-mark-matched-sample.svg')" aria-label="Matched Sample one-color mark at 24 pixels" role="img"></span></span><span>24</span></div>
+          </div>
+        </section>
+        <section class="mark-preview-set" aria-label="Matched Sample dark background">
+          <h3>Dark background</h3>
+          <div class="mark-sizes">
+            <div class="mark-sample"><span class="mark-frame dark" style="--size: 256px"><img class="mark-img" src="/assets/img/archive/20260624__mark_candidates/data-mark-matched-sample.svg" width="256" height="256" alt="Matched Sample mark on dark background at 256 pixels"></span><span>256</span></div>
+            <div class="mark-sample"><span class="mark-frame dark" style="--size: 96px"><img class="mark-img" src="/assets/img/archive/20260624__mark_candidates/data-mark-matched-sample.svg" width="96" height="96" alt="Matched Sample mark on dark background at 96 pixels"></span><span>96</span></div>
+            <div class="mark-sample"><span class="mark-frame dark" style="--size: 48px"><img class="mark-img" src="/assets/img/archive/20260624__mark_candidates/data-mark-matched-sample.svg" width="48" height="48" alt="Matched Sample mark on dark background at 48 pixels"></span><span>48</span></div>
+            <div class="mark-sample"><span class="mark-frame dark" style="--size: 32px"><img class="mark-img" src="/assets/img/archive/20260624__mark_candidates/data-mark-matched-sample.svg" width="32" height="32" alt="Matched Sample mark on dark background at 32 pixels"></span><span>32</span></div>
+            <div class="mark-sample"><span class="mark-frame dark" style="--size: 24px"><img class="mark-img" src="/assets/img/archive/20260624__mark_candidates/data-mark-matched-sample.svg" width="24" height="24" alt="Matched Sample mark on dark background at 24 pixels"></span><span>24</span></div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="small">
+      <strong>Michael Dalton</strong> | Research Economist, Bureau of Labor Statistics.<br>
+      Views expressed here are my own and do not necessarily reflect the views of the Bureau of Labor Statistics.
+    </div>
+    <div class="footer-links small">
+      <a href="/research/">Research</a>
+      <a href="/cv/">CV</a>
+      <a href="/contact/">Contact</a>
+    </div>
+    <div class="small">Copyright <span id="year">2026</span> Michael Dalton.</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

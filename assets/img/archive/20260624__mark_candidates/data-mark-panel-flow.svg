@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="panel-flow-title">
+  <title id="panel-flow-title">Establishment panel flow mark showing continuing entrants and exits over time</title>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="8">
+    <path d="M40 60 L96 56 L150 62 L208 58" stroke="#1f4e79"/>
+    <path d="M40 106 L96 106 L150 102 L208 104" stroke="#1f4e79"/>
+    <path d="M40 148 L96 154 L150 150 L208 154" stroke="#1f4e79"/>
+    <path d="M96 80 L150 84 L208 80" stroke="#b45309"/>
+    <path d="M40 184 L96 178 L150 184" stroke="#b45309"/>
+    <path d="M96 210 L150 204" stroke="#b45309"/>
+  </g>
+  <g fill="#1f4e79">
+    <circle cx="40" cy="60" r="8"/>
+    <circle cx="96" cy="56" r="8"/>
+    <circle cx="150" cy="62" r="8"/>
+    <circle cx="208" cy="58" r="8"/>
+    <circle cx="40" cy="106" r="8"/>
+    <circle cx="96" cy="106" r="8"/>
+    <circle cx="150" cy="102" r="8"/>
+    <circle cx="208" cy="104" r="8"/>
+    <circle cx="40" cy="148" r="8"/>
+    <circle cx="96" cy="154" r="8"/>
+    <circle cx="150" cy="150" r="8"/>
+    <circle cx="208" cy="154" r="8"/>
+  </g>
+  <g fill="#b45309">
+    <rect x="88" y="72" width="16" height="16"/>
+    <rect x="142" y="76" width="16" height="16"/>
+    <rect x="200" y="72" width="16" height="16"/>
+    <rect x="32" y="176" width="16" height="16"/>
+    <rect x="88" y="170" width="16" height="16"/>
+    <rect x="142" y="176" width="16" height="16"/>
+    <rect x="88" y="202" width="16" height="16"/>
+    <rect x="142" y="196" width="16" height="16"/>
+  </g>
+</svg>

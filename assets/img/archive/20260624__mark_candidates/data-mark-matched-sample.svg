@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="matched-sample-title">
+  <title id="matched-sample-title">Matched sample mark showing paired filled and open observations</title>
+  <g fill="none" stroke="#1f4e79" stroke-width="7" stroke-linecap="round">
+    <path d="M60 58 L84 70"/>
+    <path d="M148 52 L172 66"/>
+    <path d="M58 146 L82 132"/>
+    <path d="M154 160 L180 148"/>
+    <path d="M112 204 L138 196"/>
+  </g>
+  <g fill="#1f4e79">
+    <circle cx="60" cy="58" r="9"/>
+    <circle cx="148" cy="52" r="9"/>
+    <circle cx="82" cy="132" r="9"/>
+    <circle cx="154" cy="160" r="9"/>
+    <circle cx="112" cy="204" r="9"/>
+    <circle cx="38" cy="104" r="9"/>
+    <circle cx="112" cy="92" r="9"/>
+    <circle cx="204" cy="104" r="9"/>
+    <circle cx="74" cy="198" r="9"/>
+    <circle cx="214" cy="198" r="9"/>
+    <circle cx="126" cy="152" r="9"/>
+    <circle cx="190" cy="34" r="9"/>
+  </g>
+  <g fill="none" stroke="#b45309" stroke-width="7">
+    <circle cx="84" cy="70" r="9"/>
+    <circle cx="172" cy="66" r="9"/>
+    <circle cx="58" cy="146" r="9"/>
+    <circle cx="180" cy="148" r="9"/>
+    <circle cx="138" cy="196" r="9"/>
+    <circle cx="42" cy="42" r="9"/>
+    <circle cx="98" cy="38" r="9"/>
+    <circle cx="222" cy="76" r="9"/>
+    <circle cx="98" cy="170" r="9"/>
+    <circle cx="200" cy="234" r="9"/>
+    <circle cx="36" cy="218" r="9"/>
+    <circle cx="160" cy="116" r="9"/>
+  </g>
+</svg>
