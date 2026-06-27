@@ -13,7 +13,7 @@ from urllib.parse import unquote, urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 DOMAIN = "https://michaeldaltoneconomics.org"
-SOCIAL_IMAGE_URL = f"{DOMAIN}/assets/img/site-mark.png"
+SOCIAL_IMAGE_URL = f"{DOMAIN}/assets/img/site-mark-20260627.png"
 SOCIAL_IMAGE_ALT = "Michael Dalton data mark"
 DISCLAIMER = "Views expressed here are my own and do not necessarily reflect the views of the Bureau of Labor Statistics."
 
@@ -40,10 +40,13 @@ REQUIRED_FILES = (
     "assets/js/research-network.js",
     "assets/data/research-network.json",
     "assets/img/data-mark-logo.svg",
+    "assets/img/data-mark-logo-20260627.svg",
     "assets/img/site-mark.png",
+    "assets/img/site-mark-20260627.png",
     "assets/img/linkedin.svg",
     "assets/img/google-scholar.svg",
     "favicon.svg",
+    "favicon-20260627.svg",
     "assets/docs/michael-dalton-cv.pdf",
     "assets/docs/cv.pdf",
     "assets/docs/michael-dalton-resume.pdf",
@@ -454,7 +457,7 @@ def check_html(errors):
     titles = {}
     parsed_cache = {}
     html_files = [p for p in iter_site_files() if p.suffix.lower() == ".html"]
-    site_mark_size = png_dimensions(ROOT / "assets" / "img" / "site-mark.png", errors)
+    site_mark_size = png_dimensions(ROOT / "assets" / "img" / "site-mark-20260627.png", errors)
 
     def parsed_page(path):
         if path not in parsed_cache:

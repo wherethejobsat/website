@@ -1,0 +1,50 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 256 256"
+  role="img"
+  aria-labelledby="linked-records-title"
+  shape-rendering="geometricPrecision"
+>
+  <title id="linked-records-title">
+    Linked records across two compact data grids
+  </title>
+
+  <rect width="256" height="256" fill="#eee8de" />
+
+  <g
+    fill="none"
+    stroke="#b45309"
+    stroke-width="3.5"
+    stroke-linecap="round"
+  >
+    <path d="M82 48 C116 48 140 88 174 88" />
+    <path d="M82 128 C116 128 140 168 174 168" />
+    <path d="M82 208 C116 208 140 208 174 208" />
+  </g>
+
+  <g fill="#1f4e79">
+    <rect x="42" y="40" width="16" height="16" />
+    <rect x="42" y="80" width="16" height="16" />
+    <rect x="66" y="80" width="16" height="16" />
+    <rect x="42" y="120" width="16" height="16" />
+    <rect x="42" y="160" width="16" height="16" />
+    <rect x="66" y="160" width="16" height="16" />
+    <rect x="42" y="200" width="16" height="16" />
+    <rect x="174" y="40" width="16" height="16" />
+    <rect x="198" y="40" width="16" height="16" />
+    <rect x="198" y="80" width="16" height="16" />
+    <rect x="174" y="120" width="16" height="16" />
+    <rect x="198" y="120" width="16" height="16" />
+    <rect x="198" y="160" width="16" height="16" />
+    <rect x="198" y="200" width="16" height="16" />
+  </g>
+
+  <g fill="#b45309">
+    <rect x="66" y="40" width="16" height="16" />
+    <rect x="66" y="120" width="16" height="16" />
+    <rect x="66" y="200" width="16" height="16" />
+    <rect x="174" y="80" width="16" height="16" />
+    <rect x="174" y="160" width="16" height="16" />
+    <rect x="174" y="200" width="16" height="16" />
+  </g>
+</svg>
