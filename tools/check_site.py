@@ -580,6 +580,14 @@ def check_research_network(errors):
         missing = [key for key in ("id", "label", "title", "href") if not node.get(key)]
         if missing:
             errors.append(f"paper node {node.get('id', '<missing>')} is missing required fields: {', '.join(missing)}")
+        if node.get("group_id"):
+            group = node_by_id.get(node["group_id"])
+            if not group or group.get("type") != "paper" or group.get("group_id"):
+                errors.append(f"paper node {node['id']} has an invalid group: {node['group_id']}")
+        if node.get("paper_url"):
+            paper_url = urlparse(node["paper_url"])
+            if paper_url.scheme != "https" or not paper_url.netloc:
+                errors.append(f"paper node {node['id']} must use an absolute HTTPS paper_url")
         for field in required_paper_fields:
             values = node.get(field)
             if not isinstance(values, list) or not values:

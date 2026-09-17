@@ -144,11 +144,12 @@
       "id": "online-job-postings",
       "type": "paper",
       "label": "Job Postings",
-      "title": "Do Online Job Postings Capture Job Vacancies? An Analysis of Matched Online Postings and Vacancy Survey Data",
+      "title": "Do Online Job Postings Capture Job Vacancies?",
       "year": "2026",
-      "status": "Work in Progress",
-      "category": "Works in Progress",
+      "status": "NBER Working Paper 35697 (September 2026)",
+      "category": "Working Papers",
       "href": "/research/#online-job-postings",
+      "paper_url": "https://www.nber.org/papers/w35697",
       "x": 720,
       "y": 250,
       "topics": [
@@ -496,6 +497,7 @@
     },
     {
       "id": "telework-brs",
+      "group_id": "remote-work",
       "type": "paper",
       "label": "Telework / BRS",
       "title": "Telework during the COVID-19 pandemic: estimates using the 2021 Business Response Survey",

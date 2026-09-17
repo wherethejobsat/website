@@ -195,14 +195,32 @@
     edges.push([sourceId, targetId]);
   }
 
+  function groupPapers(nodes) {
+    var byId = {};
+    nodes.forEach(function (node) { byId[node.id] = node; });
+    nodes.filter(function (node) { return node.group_id; }).forEach(function (paper) {
+      var group = byId[paper.group_id];
+      if (!group || group.type !== "paper" || group.group_id) {
+        throw new Error("Invalid paper group: " + paper.group_id);
+      }
+      if (!group.members) group.members = [Object.assign({}, group)];
+      group.members.push(paper);
+      metadataSpecs.forEach(function (spec) {
+        group[spec.field] = Array.from(new Set(labelsFor(group, spec.field).concat(labelsFor(paper, spec.field))));
+      });
+      group.title = group.members.map(function (member) { return member.title; }).join(" / ");
+    });
+    return nodes.filter(function (node) { return !node.group_id; });
+  }
+
   function expandStructuredMetadata(data) {
-    var nodes = (data.nodes || []).map(function (node) {
+    var nodes = groupPapers((data.nodes || []).map(function (node) {
       var copy = {};
       Object.keys(node || {}).forEach(function (key) {
         copy[key] = node[key];
       });
       return copy;
-    });
+    }));
     var edges = [];
     var usedIds = {};
     var edgeKeys = {};
@@ -279,7 +297,7 @@
   }
 
   function nodeAriaLabel(node) {
-    var prefix = formatType(node.type);
+    var prefix = node.members ? "Paper group" : formatType(node.type);
     var label = prefix + ": " + node.label + ".";
     if (node.type === "paper" && node.title) label += " " + node.title + ".";
     return label + " Select for details.";
@@ -327,6 +345,12 @@
     return ids;
   }
 
+  function matchesFilter(paper, filter) {
+    return filter === "All" || (paper.members || [paper]).some(function (member) {
+      return member.category === filter;
+    });
+  }
+
   function activeNodeIds() {
     var ids = new Set();
     if (state.filter === "All") {
@@ -335,7 +359,7 @@
     }
 
     paperNodes().forEach(function (paper) {
-      if (paper.category !== state.filter) return;
+      if (!matchesFilter(paper, state.filter)) return;
       ids.add(paper.id);
       (state.adjacency[paper.id] || new Set()).forEach(function (neighborId) {
         ids.add(neighborId);
@@ -346,7 +370,7 @@
 
   function firstPaperIdForFilter(filter) {
     var found = paperNodes().find(function (paper) {
-      return filter === "All" || paper.category === filter;
+      return matchesFilter(paper, filter);
     });
     return found ? found.id : null;
   }
@@ -502,6 +526,20 @@
   }
 
   function renderPaperPanel(node) {
+    if (node.members) {
+      panel.appendChild(el("p", "network-eyebrow", "Selected paper group"));
+      panel.appendChild(el("h3", null, node.label));
+      node.members.forEach(function (paper) {
+        panel.appendChild(el("h4", null, paper.title));
+        panel.appendChild(el("p", null, [paper.year, paper.status, paper.category].filter(Boolean).join(" - ")));
+        var link = el("a", "network-detail-link", "Open on research page");
+        link.href = paper.href;
+        panel.appendChild(link);
+      });
+      metadataSpecs.forEach(function (spec) { renderMetadataGroup(node, spec); });
+      return;
+    }
+
     var title = el("h3", null, node.label);
     var summary = el("p", "network-panel-title", node.title);
     var meta = el("dl", "network-meta");
@@ -525,6 +563,12 @@
       renderMetadataGroup(node, spec);
     });
 
+    if (node.paper_url) {
+      var paperLink = el("a", "network-detail-link", "NBER Working Paper");
+      paperLink.href = node.paper_url;
+      paperLink.rel = "noopener";
+      panel.appendChild(paperLink);
+    }
     if (node.href) {
       var link = el("a", "network-detail-link", "Open on research page");
       link.href = node.href;
@@ -544,9 +588,13 @@
       papers.forEach(function (paper) {
         var item = el("li");
         var link = el("a", null, paper.label);
-        link.href = paper.href || "/research/#" + paper.id;
+        link.href = paper.paper_url || paper.href || "/research/#" + paper.id;
+        if (paper.paper_url) link.rel = "noopener";
         item.appendChild(link);
-        if (paper.category) item.appendChild(document.createTextNode(" (" + paper.category + ")"));
+        var categories = Array.from(new Set((paper.members || [paper]).map(function (member) {
+          return member.category;
+        }).filter(Boolean)));
+        if (categories.length) item.appendChild(document.createTextNode(" (" + categories.join("; ") + ")"));
         if (paper.needs_verification) item.appendChild(document.createTextNode(" - needs verification"));
         list.appendChild(item);
       });
@@ -615,7 +663,9 @@
   function setupFilters() {
     var categoryCounts = {};
     paperNodes().forEach(function (paper) {
-      categoryCounts[paper.category] = (categoryCounts[paper.category] || 0) + 1;
+      (paper.members || [paper]).forEach(function (member) {
+        categoryCounts[member.category] = (categoryCounts[member.category] || 0) + 1;
+      });
     });
 
     filterButtons.forEach(function (button) {
