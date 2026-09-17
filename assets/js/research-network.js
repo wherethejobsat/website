@@ -72,7 +72,7 @@
     {
       field: "data_sources",
       type: "data_source",
-      heading: "Data sources",
+      heading: "Data Sources",
       idPrefix: "data-source",
       x: 620,
       yStart: 70,
@@ -141,9 +141,16 @@
   }
 
   function formatType(type) {
-    if (type === "data" || type === "data_source") return "Data source";
+    if (type === "data" || type === "data_source") return "Data Source";
     if (type === "topic") return "Topic";
     return "Paper";
+  }
+
+  function displayLabel(label) {
+    return String(label).replace(/\b[a-z]+\b/g, function (word, offset) {
+      if (offset > 0 && /^(and|or|of|the|in|on|for|to|with|at|by)$/.test(word)) return word;
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    });
   }
 
   function labelsFor(node, field) {
@@ -242,7 +249,7 @@
       var node = {
         id: uniqueNodeId(spec.idPrefix + "-" + slugify(label), usedIds),
         type: spec.type,
-        label: label,
+        label: displayLabel(label),
         metadataField: spec.field,
         generatedMetadata: true,
         x: spec.x,
@@ -269,7 +276,7 @@
     metadataSpecs.forEach(function (spec) {
       var labelRank = {};
       spec.labels.forEach(function (label, index) {
-        labelRank[label] = index;
+        labelRank[displayLabel(label)] = index;
       });
       var group = nodes.filter(function (node) {
         return node.generatedMetadata && node.type === spec.type;
@@ -506,7 +513,7 @@
     var list = el("ul", "network-chip-list");
     nodes.forEach(function (node) {
       var item = el("li");
-      item.appendChild(el("span", "network-chip network-chip-" + typeClass(node.type), node.label));
+      item.appendChild(el("span", "network-chip network-chip-" + typeClass(node.type), displayLabel(node.label)));
       list.appendChild(item);
     });
     parent.appendChild(list);
@@ -583,7 +590,7 @@
 
     var papers = neighbors(node.id).filter(function (item) { return item.type === "paper"; });
     if (papers.length) {
-      panel.appendChild(el("h4", null, "Connected papers"));
+      panel.appendChild(el("h4", null, "Connected Papers"));
       var list = el("ul", "network-paper-list");
       papers.forEach(function (paper) {
         var item = el("li");

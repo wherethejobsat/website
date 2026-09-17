@@ -99,7 +99,7 @@
     {
       "id": "employer-size-update",
       "type": "paper",
-      "label": "Employer Size / COVID",
+      "label": "Employer Size",
       "title": "An Update on Employment changes by employer size during the COVID-19 pandemic: a look at the Current Employment Statistics survey microdata",
       "year": "2020",
       "status": "Slides presented at NBER 2021 Summer Workshop",
@@ -543,6 +543,7 @@
     },
     {
       "id": "employer-size-mlr",
+      "group_id": "employer-size-update",
       "type": "paper",
       "label": "Employer Size / MLR",
       "title": "Employment changes by employer size during the COVID-19 pandemic: a look at the Current Employment Statistics survey microdata",
